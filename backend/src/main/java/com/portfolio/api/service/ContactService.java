@@ -13,6 +13,9 @@ public class ContactService {
     @Autowired
     private ContactMessageRepository contactMessageRepository;
 
+    @Autowired
+    private EmailService emailService;
+
     public List<ContactMessage> getAllMessages() {
         return contactMessageRepository.findAllByOrderByCreatedAtDesc();
     }
@@ -26,7 +29,13 @@ public class ContactService {
     }
 
     public ContactMessage saveMessage(ContactMessage message) {
-        return contactMessageRepository.save(message);
+        // Save the message to database
+        ContactMessage savedMessage = contactMessageRepository.save(message);
+        
+        // Send email notification
+        emailService.sendContactNotification(savedMessage);
+        
+        return savedMessage;
     }
 
     public void deleteMessage(Long id) {

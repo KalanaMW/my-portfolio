@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ProjectService } from '../../services/project.service';
 import { SkillService } from '../../services/skill.service';
+import { ContactService } from '../../services/contact.service';
+import { ContactMessage } from '../../models/contact-message.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   animations: [
     trigger('slideDown', [
       state('collapsed', style({
@@ -577,7 +581,7 @@ import { SkillService } from '../../services/skill.service';
             </div>
             <div class="award-card">
               <div class="award-image-container">
-                <img src="assets/CodeArena-new.png" alt="CodeAréna '25" class="award-image">
+                <img src="assets/CodeArena.jpg" alt="CodeAréna '25" class="award-image">
                 <div class="award-overlay"></div>
               </div>
               <div class="award-content">
@@ -588,7 +592,7 @@ import { SkillService } from '../../services/skill.service';
             </div>
             <div class="award-card">
               <div class="award-image-container">
-                <img src="assets/Devthon-2.0-new.png" alt="Devthon 2.0" class="award-image">
+                <img src="assets/Devthon 2.0.jpg" alt="Devthon 2.0" class="award-image">
                 <div class="award-overlay"></div>
               </div>
               <div class="award-content">
@@ -848,28 +852,103 @@ import { SkillService } from '../../services/skill.service';
         <div class="container">
           <h2 class="section-title">Get In Touch</h2>
           <p class="section-subtitle">I'm actively seeking software engineering internships and exciting collaborative projects.</p>
-          <div class="contact-methods-grid">
-            <a href="mailto:kalanam890@gmail.com" class="contact-method-card">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/>
-              </svg>
-              <h3>Email</h3>
-              <p>kalanam890{{ '@' }}gmail.com</p>
-            </a>
-            <a href="https://www.linkedin.com/in/kalana-madhumalka-19b787334" target="_blank" class="contact-method-card">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/>
-              </svg>
-              <h3>LinkedIn</h3>
-              <p>Connect with me</p>
-            </a>
-            <a href="https://github.com/KalanaMW" target="_blank" class="contact-method-card">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="#181717"/>
-              </svg>
-              <h3>GitHub</h3>
-              <p>View my repositories</p>
-            </a>
+          
+          <div class="contact-content">
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+              <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contact-form">
+                <div class="form-group">
+                  <label for="name">Name *</label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    [(ngModel)]="message.name" 
+                    required 
+                    class="form-input"
+                    placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    [(ngModel)]="message.email" 
+                    required 
+                    email
+                    class="form-input"
+                    placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input 
+                    type="text" 
+                    id="subject" 
+                    name="subject" 
+                    [(ngModel)]="message.subject" 
+                    class="form-input"
+                    placeholder="What's this about?">
+                </div>
+
+                <div class="form-group">
+                  <label for="messageText">Message *</label>
+                  <textarea 
+                    id="messageText" 
+                    name="messageText" 
+                    [(ngModel)]="message.message" 
+                    required 
+                    rows="5"
+                    class="form-textarea"
+                    placeholder="Tell me about your project or just say hello..."></textarea>
+                </div>
+
+                <button 
+                  type="submit" 
+                  [disabled]="!contactForm.form.valid || isSubmitting"
+                  class="submit-btn">
+                  <span *ngIf="!isSubmitting">Send Message</span>
+                  <span *ngIf="isSubmitting">Sending...</span>
+                </button>
+
+                <div *ngIf="submitSuccess" class="success-message">
+                  ✓ Message sent successfully! I'll get back to you soon.
+                </div>
+                <div *ngIf="submitError" class="error-message">
+                  ✗ {{ submitError }}
+                </div>
+              </form>
+            </div>
+
+            <!-- Contact Methods -->
+            <div class="contact-methods-container">
+              <h3 class="contact-methods-title">Or reach out directly</h3>
+              <div class="contact-methods-grid">
+                <a href="mailto:kalanam890@gmail.com" class="contact-method-card">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/>
+                  </svg>
+                  <h3>Email</h3>
+                  <p>kalanam890{{ '@' }}gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/in/kalana-madhumalka-19b787334" target="_blank" class="contact-method-card">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/>
+                  </svg>
+                  <h3>LinkedIn</h3>
+                  <p>Connect with me</p>
+                </a>
+                <a href="https://github.com/KalanaMW" target="_blank" class="contact-method-card">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="#181717"/>
+                  </svg>
+                  <h3>GitHub</h3>
+                  <p>View my repositories</p>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -2153,7 +2232,6 @@ import { SkillService } from '../../services/skill.service';
       padding: 80px 20px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      text-align: center;
     }
 
     :host-context(.dark-mode) .contact-section {
@@ -2167,46 +2245,209 @@ import { SkillService } from '../../services/skill.service';
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      text-align: center;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    /* Contact Form Styles */
+    .contact-form-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 40px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: white;
+      opacity: 0.95;
+    }
+
+    .form-input,
+    .form-textarea {
+      padding: 14px 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      padding: 16px 32px;
+      background: white;
+      color: #667eea;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .success-message {
+      padding: 15px;
+      background: rgba(46, 213, 115, 0.2);
+      border: 2px solid rgba(46, 213, 115, 0.5);
+      border-radius: 12px;
+      color: white;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .error-message {
+      padding: 15px;
+      background: rgba(255, 71, 87, 0.2);
+      border: 2px solid rgba(255, 71, 87, 0.5);
+      border-radius: 12px;
+      color: white;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    /* Contact Methods Container */
+    .contact-methods-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-methods-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+      text-align: center;
     }
 
     .contact-methods-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     .contact-method-card {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-radius: 16px;
-      padding: 30px;
+      padding: 24px;
       text-decoration: none;
       color: white;
       transition: all 0.3s ease;
       border: 2px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     .contact-method-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
       background: rgba(255, 255, 255, 0.15);
       border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .contact-method-card svg {
-      margin-bottom: 15px;
+      flex-shrink: 0;
     }
 
     .contact-method-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin: 0 0 5px 0;
     }
 
     .contact-method-card p {
       opacity: 0.9;
       margin: 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 968px) {
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-form-container {
+        padding: 30px;
+      }
+
+      .contact-methods-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .contact-method-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .contact-form-container {
+        padding: 24px;
+      }
+
+      .contact-methods-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Extra-Curricular Activities */
@@ -2710,9 +2951,21 @@ export class HomeComponent implements OnInit {
     'karate4': false
   };
 
+  // Contact form properties
+  message: ContactMessage = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  };
+  isSubmitting = false;
+  submitSuccess = false;
+  submitError = '';
+
   constructor(
     private projectService: ProjectService,
-    private skillService: SkillService
+    private skillService: SkillService,
+    private contactService: ContactService
   ) {}
 
   ngOnInit() {
@@ -2847,5 +3100,41 @@ export class HomeComponent implements OnInit {
 
   goToImage(carouselKey: string, index: number) {
     this.carouselIndices[carouselKey] = index;
+  }
+
+  // Contact form submission
+  onSubmit() {
+    if (this.isSubmitting) return;
+
+    this.isSubmitting = true;
+    this.submitSuccess = false;
+    this.submitError = '';
+
+    this.contactService.sendMessage(this.message).subscribe({
+      next: () => {
+        this.submitSuccess = true;
+        this.isSubmitting = false;
+        // Reset form
+        this.message = {
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        };
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          this.submitSuccess = false;
+        }, 5000);
+      },
+      error: (error) => {
+        this.isSubmitting = false;
+        this.submitError = 'Failed to send message. Please try again or email me directly.';
+        console.error('Error sending message:', error);
+        // Clear error message after 5 seconds
+        setTimeout(() => {
+          this.submitError = '';
+        }, 5000);
+      }
+    });
   }
 }

@@ -1,0 +1,13 @@
+node_modules
+frontend/node_modules
+backend
+database
+*.jar
+target
+.git
+.angular
+frontend/.angular
+frontend/dist
+*.log
+*.md
+.DS_Store

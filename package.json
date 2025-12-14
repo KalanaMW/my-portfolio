@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-api",
+  "version": "1.0.0",
+  "description": "Serverless API for portfolio contact form",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "nodemailer": "^6.10.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

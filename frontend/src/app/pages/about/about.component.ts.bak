@@ -1,0 +1,218 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-about',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
+  template: `
+    <div class="about-container">
+      <!-- Hero Section -->
+      <div class="about-hero">
+        <div class="container">
+          <div class="profile-section">
+            <div class="profile-image">
+              <img src="assets/profile.png" alt="Kalana Warnakulasooriya" class="profile-img">
+            </div>
+            <div class="hero-text">
+              <h1 class="hero-title">Kalana Warnakulasooriya</h1>
+              <p class="hero-subtitle">Software Engineering Intern</p>
+              <div class="contact-info">
+                <a href="mailto:kalanam890@gmail.com" class="contact-item">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/>
+                  </svg>
+                  kalanam890&#64;gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/kalana-madhumalka-19b787334" target="_blank" class="contact-item">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/>
+                  </svg>
+                  LinkedIn
+                </a>
+                <a href="https://github.com/KalanaMW" target="_blank" class="contact-item">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="#181717"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+              <p class="hero-description">
+                I am an enthusiastic IT and Management undergraduate who thrives on tackling challenges and finding creative
+                solutions. I have a strong interest in software engineering and web development, and I am seeking a software
+                engineering internship where I can apply my time management and teamwork skills to contribute to collaborative
+                projects and create value efficiently.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Education Section -->
+        <section class="education-section">
+          <h2 class="section-title">🎓 Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>B.Sc. (Hons) in Information Technology & Management</h3>
+                  <span class="timeline-date">2023 - Present</span>
+                </div>
+                <p class="timeline-institution">University of Moratuwa</p>
+                <p class="timeline-detail"><strong>Current GPA: 3.46 / 4.00</strong></p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Diploma in Business Management</h3>
+                  <span class="timeline-date">2024 - 2025</span>
+                </div>
+                <p class="timeline-institution">IMBS Green Campus</p>
+                <p class="timeline-detail"><strong>Final GPA: 3.893 / 4.00</strong></p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>G.C.E Advanced Level - Physical Science</h3>
+                  <span class="timeline-date">2021</span>
+                </div>
+                <p class="timeline-institution">Maliyadeva College - Kurunegala</p>
+                <p class="timeline-detail"><strong>Z-score: 1.3533</strong></p>
+                <p>Chemistry - B, Physics - B, Combined Mathematics - C</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>G.C.E Ordinary Level</h3>
+                  <span class="timeline-date">2017</span>
+                </div>
+                <p class="timeline-institution">Maliyadeva College - Kurunegala</p>
+                <p class="timeline-detail"><strong>7 A's & 2 B's</strong> (English Medium)</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills & Interests -->
+        <section class="skills-section">
+          <div class="skills-grid">
+            <div class="skill-card">
+              <h3>💪 Soft Skills</h3>
+              <div class="skill-items">
+                <span class="skill-tag">Leadership</span>
+                <span class="skill-tag">Self Learning</span>
+                <span class="skill-tag">Analytical Thinking</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Effective Communication</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <h3>🎯 Interests</h3>
+              <div class="skill-items">
+                <span class="skill-tag">Enterprise Application Development</span>
+                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Competitive Gaming</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+          <h2 class="section-title">🚀 Major Projects</h2>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>AgriLink Lanka – Agricultural Export Platform</h3>
+              <span class="project-badge ongoing">ONGOING</span>
+            </div>
+            <p class="project-year">2025 - Ongoing</p>
+            <p class="project-description">
+              Developing a centralized B2B web platform to connect Sri Lankan farmers directly with global exporters, 
+              eliminating intermediaries and promoting fair trade.
+            </p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Next.js, Tailwind CSS, ASP.NET Core, PostgreSQL, Stripe, TypeScript</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>FitSync Pro - Trainer Reservation System</h3>
+              <span class="project-badge completed">COMPLETED</span>
+            </div>
+            <p class="project-year">2024 - 2025</p>
+            <p class="project-description">
+              <strong>Level 2 Software Project | Role: Team Leader</strong><br>
+              Fitness trainer reservation and management system. Integrated Stripe payments and implemented purchase history features.
+            </p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Next.js, Stripe API, TypeScript, Tailwind CSS, Node.js</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Gamers_Hub – Gaming News & Entertainment Platform</h3>
+              <span class="project-badge completed">COMPLETED</span>
+            </div>
+            <p class="project-year">2024</p>
+            <p class="project-description">
+              Modern web app for gamers with authentication, dashboards, and dynamic content sections.
+            </p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Laravel 11, React, Inertia.js, Tailwind CSS, SQLite</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Informative Posture Corrector</h3>
+              <span class="project-badge completed">COMPLETED</span>
+            </div>
+            <p class="project-year">2024</p>
+            <p class="project-description">
+              <strong>Level 1 Hardware Project | Role: Team Leader</strong><br>
+              Device providing real-time posture feedback using MPU 6050 sensor and Arduino C++.
+            </p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Arduino C++, MPU 6050 Sensor, Flex Sensor</p>
+          </div>
+        </section>
+
+        <!-- Contributions -->
+        <section class="contributions-section">
+          <h2 class="section-title">🤝 Community Contributions</h2>
+          <div class="contributions-grid">
+            <div class="contribution-card">
+              <h4>🤝 Axinom Company Coordinator</h4>
+              <p>Faculty of IT Career Fair 2025</p>
+            </div>
+            <div class="contribution-card">
+              <h4>🌱 DBM Group CSR Project Leader</h4>
+              <p>School donations, tree planting, and IoT workshop</p>
+            </div>
+            <div class="contribution-card">
+              <h4>💼 Virtusa Industry Reconnaissance</h4>
+              <p>Successful CSR collaboration project</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+          <h2>Ready to Collaborate?</h2>
+          <p>I'm actively seeking software engineering internships and exciting project opportunities.</p>
+          <div class="cta-buttons">
+            <a routerLink="/contact" class="btn btn-primary">Get In Touch</a>
+            <a routerLink="/projects" class="btn btn-secondary">View All Projects</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  `,
+  styleUrls: ['./about.component.scss']
+})
+export class AboutComponent {}

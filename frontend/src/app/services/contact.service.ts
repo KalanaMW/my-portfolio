@@ -7,12 +7,13 @@ import { ContactMessage } from '../models/contact-message.model';
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'http://localhost:8080/api/contact';
+  // Use relative path for both dev and prod - works with Vercel dev and production
+  private apiUrl = '/api/contact';
 
   constructor(private http: HttpClient) { }
 
-  sendMessage(message: ContactMessage): Observable<ContactMessage> {
-    return this.http.post<ContactMessage>(this.apiUrl, message);
+  sendMessage(message: ContactMessage): Observable<any> {
+    return this.http.post<any>(this.apiUrl, message);
   }
 
   getAllMessages(): Observable<ContactMessage[]> {
