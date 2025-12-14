@@ -84,8 +84,9 @@ import { Project } from '../../models/project.model';
   styles: [`
     .projects-container {
       min-height: 100vh;
-      padding: 40px 0;
-      background: #f9fafb;
+      padding: 120px 30px 60px;
+      background: var(--bg-primary);
+      transition: background-color 0.3s ease;
     }
 
     .container {
@@ -102,15 +103,18 @@ import { Project } from '../../models/project.model';
     .page-title {
       font-size: 3rem;
       font-weight: 700;
-      color: #1f2937;
+      color: var(--text-heading);
       margin-bottom: 15px;
+      transition: color 0.3s ease;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .page-subtitle {
       font-size: 1.25rem;
-      color: #6b7280;
+      color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto;
+      transition: color 0.3s ease;
     }
 
     .search-section {

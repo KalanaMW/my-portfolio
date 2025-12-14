@@ -1,389 +1,218 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <div class="about-container">
-      <div class="container">
-        <!-- Hero Section -->
-        <div class="about-hero">
-          <div class="hero-content">
+      <!-- Hero Section -->
+      <div class="about-hero">
+        <div class="container">
+          <div class="profile-section">
             <div class="profile-image">
-              <img src="https://via.placeholder.com/300x300" alt="Profile Picture" class="profile-img">
+              <img src="assets/profile.png" alt="Kalana Warnakulasooriya" class="profile-img">
             </div>
             <div class="hero-text">
-              <h1 class="hero-title">About Me</h1>
-              <p class="hero-subtitle">Passionate Full-Stack Developer</p>
+              <h1 class="hero-title">Kalana Warnakulasooriya</h1>
+              <p class="hero-subtitle">Software Engineering Intern</p>
+              <div class="contact-info">
+                <a href="mailto:kalanam890@gmail.com" class="contact-item">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/>
+                  </svg>
+                  kalanam890&#64;gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/kalana-madhumalka-19b787334" target="_blank" class="contact-item">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/>
+                  </svg>
+                  LinkedIn
+                </a>
+                <a href="https://github.com/KalanaMW" target="_blank" class="contact-item">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="#181717"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
               <p class="hero-description">
-                I'm a dedicated software developer with a passion for creating innovative solutions 
-                using modern technologies. With expertise in Angular, Spring Boot, and SQL Server, 
-                I enjoy building scalable web applications that make a difference.
+                I am an enthusiastic IT and Management undergraduate who thrives on tackling challenges and finding creative
+                solutions. I have a strong interest in software engineering and web development, and I am seeking a software
+                engineering internship where I can apply my time management and teamwork skills to contribute to collaborative
+                projects and create value efficiently.
               </p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Story Section -->
-        <div class="story-section">
-          <div class="section-content">
-            <h2 class="section-title">My Journey</h2>
-            <div class="story-grid">
-              <div class="story-item">
-                <div class="story-icon">🎓</div>
-                <h3>Education</h3>
-                <p>
-                  I hold a degree in Computer Science and have continuously expanded my knowledge 
-                  through online courses, certifications, and hands-on projects. Learning is 
-                  a lifelong passion that drives my career.
-                </p>
+      <div class="container">
+        <!-- Education Section -->
+        <section class="education-section">
+          <h2 class="section-title">🎓 Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>B.Sc. (Hons) in Information Technology & Management</h3>
+                  <span class="timeline-date">2023 - Present</span>
+                </div>
+                <p class="timeline-institution">University of Moratuwa</p>
+                <p class="timeline-detail"><strong>Current GPA: 3.46 / 4.00</strong></p>
               </div>
-              <div class="story-item">
-                <div class="story-icon">💼</div>
-                <h3>Experience</h3>
-                <p>
-                  With several years of experience in full-stack development, I've worked on 
-                  various projects ranging from small business websites to enterprise-level 
-                  applications. Each project teaches me something new.
-                </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Diploma in Business Management</h3>
+                  <span class="timeline-date">2024 - 2025</span>
+                </div>
+                <p class="timeline-institution">IMBS Green Campus</p>
+                <p class="timeline-detail"><strong>Final GPA: 3.893 / 4.00</strong></p>
               </div>
-              <div class="story-item">
-                <div class="story-icon">🚀</div>
-                <h3>Passion</h3>
-                <p>
-                  I'm passionate about clean code, user experience, and continuous improvement. 
-                  I believe in the power of technology to solve real-world problems and make 
-                  people's lives better.
-                </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>G.C.E Advanced Level - Physical Science</h3>
+                  <span class="timeline-date">2021</span>
+                </div>
+                <p class="timeline-institution">Maliyadeva College - Kurunegala</p>
+                <p class="timeline-detail"><strong>Z-score: 1.3533</strong></p>
+                <p>Chemistry - B, Physics - B, Combined Mathematics - C</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>G.C.E Ordinary Level</h3>
+                  <span class="timeline-date">2017</span>
+                </div>
+                <p class="timeline-institution">Maliyadeva College - Kurunegala</p>
+                <p class="timeline-detail"><strong>7 A's & 2 B's</strong> (English Medium)</p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Values Section -->
-        <div class="values-section">
-          <div class="section-content">
-            <h2 class="section-title">What I Value</h2>
-            <div class="values-grid">
-              <div class="value-card">
-                <h3>Quality</h3>
-                <p>I believe in writing clean, maintainable code that stands the test of time.</p>
+        <!-- Skills & Interests -->
+        <section class="skills-section">
+          <div class="skills-grid">
+            <div class="skill-card">
+              <h3>💪 Soft Skills</h3>
+              <div class="skill-items">
+                <span class="skill-tag">Leadership</span>
+                <span class="skill-tag">Self Learning</span>
+                <span class="skill-tag">Analytical Thinking</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Effective Communication</span>
               </div>
-              <div class="value-card">
-                <h3>Collaboration</h3>
-                <p>Great software is built by great teams. I value open communication and teamwork.</p>
-              </div>
-              <div class="value-card">
-                <h3>Innovation</h3>
-                <p>I'm always exploring new technologies and approaches to solve problems better.</p>
-              </div>
-              <div class="value-card">
-                <h3>Learning</h3>
-                <p>The tech industry evolves rapidly, and I'm committed to staying current.</p>
+            </div>
+
+            <div class="skill-card">
+              <h3>🎯 Interests</h3>
+              <div class="skill-items">
+                <span class="skill-tag">Enterprise Application Development</span>
+                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Competitive Gaming</span>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Interests Section -->
-        <div class="interests-section">
-          <div class="section-content">
-            <h2 class="section-title">Beyond Code</h2>
-            <div class="interests-grid">
-              <div class="interest-item">
-                <div class="interest-icon">📚</div>
-                <h3>Reading</h3>
-                <p>I love reading tech blogs, books on software architecture, and personal development.</p>
-              </div>
-              <div class="interest-item">
-                <div class="interest-icon">🏃‍♂️</div>
-                <h3>Fitness</h3>
-                <p>Staying active helps me maintain focus and creativity in my work.</p>
-              </div>
-              <div class="interest-item">
-                <div class="interest-icon">🎵</div>
-                <h3>Music</h3>
-                <p>Music is my constant companion during coding sessions and helps me stay focused.</p>
-              </div>
-              <div class="interest-item">
-                <div class="interest-icon">✈️</div>
-                <h3>Travel</h3>
-                <p>Exploring new places gives me fresh perspectives and inspiration.</p>
-              </div>
+        <!-- Projects Section -->
+        <section class="projects-section">
+          <h2 class="section-title">🚀 Major Projects</h2>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>AgriLink Lanka – Agricultural Export Platform</h3>
+              <span class="project-badge ongoing">ONGOING</span>
+            </div>
+            <p class="project-year">2025 - Ongoing</p>
+            <p class="project-description">
+              Developing a centralized B2B web platform to connect Sri Lankan farmers directly with global exporters, 
+              eliminating intermediaries and promoting fair trade.
+            </p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Next.js, Tailwind CSS, ASP.NET Core, PostgreSQL, Stripe, TypeScript</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>FitSync Pro - Trainer Reservation System</h3>
+              <span class="project-badge completed">COMPLETED</span>
+            </div>
+            <p class="project-year">2024 - 2025</p>
+            <p class="project-description">
+              <strong>Level 2 Software Project | Role: Team Leader</strong><br>
+              Fitness trainer reservation and management system. Integrated Stripe payments and implemented purchase history features.
+            </p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Next.js, Stripe API, TypeScript, Tailwind CSS, Node.js</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Gamers_Hub – Gaming News & Entertainment Platform</h3>
+              <span class="project-badge completed">COMPLETED</span>
+            </div>
+            <p class="project-year">2024</p>
+            <p class="project-description">
+              Modern web app for gamers with authentication, dashboards, and dynamic content sections.
+            </p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Laravel 11, React, Inertia.js, Tailwind CSS, SQLite</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Informative Posture Corrector</h3>
+              <span class="project-badge completed">COMPLETED</span>
+            </div>
+            <p class="project-year">2024</p>
+            <p class="project-description">
+              <strong>Level 1 Hardware Project | Role: Team Leader</strong><br>
+              Device providing real-time posture feedback using MPU 6050 sensor and Arduino C++.
+            </p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Arduino C++, MPU 6050 Sensor, Flex Sensor</p>
+          </div>
+        </section>
+
+        <!-- Contributions -->
+        <section class="contributions-section">
+          <h2 class="section-title">🤝 Community Contributions</h2>
+          <div class="contributions-grid">
+            <div class="contribution-card">
+              <h4>🤝 Axinom Company Coordinator</h4>
+              <p>Faculty of IT Career Fair 2025</p>
+            </div>
+            <div class="contribution-card">
+              <h4>🌱 DBM Group CSR Project Leader</h4>
+              <p>School donations, tree planting, and IoT workshop</p>
+            </div>
+            <div class="contribution-card">
+              <h4>💼 Virtusa Industry Reconnaissance</h4>
+              <p>Successful CSR collaboration project</p>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Call to Action -->
-        <div class="cta-section">
-          <div class="cta-content">
-            <h2>Let's Work Together</h2>
-            <p>I'm always interested in new opportunities and exciting projects.</p>
-            <div class="cta-buttons">
-              <a href="/contact" class="btn btn-primary">Get In Touch</a>
-              <a href="/projects" class="btn btn-secondary">View My Work</a>
-            </div>
+        <!-- CTA -->
+        <section class="cta-section">
+          <h2>Ready to Collaborate?</h2>
+          <p>I'm actively seeking software engineering internships and exciting project opportunities.</p>
+          <div class="cta-buttons">
+            <a routerLink="/contact" class="btn btn-primary">Get In Touch</a>
+            <a routerLink="/projects" class="btn btn-secondary">View All Projects</a>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   `,
-  styles: [`
-    .about-container {
-      min-height: 100vh;
-      background: #f9fafb;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .about-hero {
-      padding: 80px 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-    }
-
-    .hero-content {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .profile-image {
-      text-align: center;
-    }
-
-    .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 5px solid white;
-      object-fit: cover;
-    }
-
-    .hero-title {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .hero-subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      opacity: 0.9;
-    }
-
-    .hero-description {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      opacity: 0.9;
-    }
-
-    .story-section,
-    .values-section,
-    .interests-section {
-      padding: 80px 0;
-    }
-
-    .section-content {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #1f2937;
-      margin-bottom: 50px;
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-    }
-
-    .story-item {
-      text-align: center;
-      padding: 30px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .story-icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    .story-item h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #1f2937;
-      margin-bottom: 15px;
-    }
-
-    .story-item p {
-      color: #6b7280;
-      line-height: 1.6;
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .value-card {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .value-card h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #2563eb;
-      margin-bottom: 15px;
-    }
-
-    .value-card p {
-      color: #6b7280;
-      line-height: 1.6;
-    }
-
-    .interests-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .interest-item {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .interest-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-
-    .interest-item h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #1f2937;
-      margin-bottom: 15px;
-    }
-
-    .interest-item p {
-      color: #6b7280;
-      line-height: 1.6;
-    }
-
-    .cta-section {
-      padding: 80px 0;
-      background: #1f2937;
-      color: white;
-      text-align: center;
-    }
-
-    .cta-content h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .cta-content p {
-      font-size: 1.25rem;
-      margin-bottom: 40px;
-      opacity: 0.9;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 15px 30px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: #2563eb;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #1f2937;
-    }
-
-    @media (max-width: 768px) {
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-      }
-
-      .hero-title {
-        font-size: 2.5rem;
-      }
-
-      .profile-img {
-        width: 150px;
-        height: 150px;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .story-grid,
-      .values-grid,
-      .interests-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cta-content h2 {
-        font-size: 2rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  `]
+  styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
-}
+export class AboutComponent {}

@@ -89,8 +89,9 @@ import { Skill } from '../../models/skill.model';
   styles: [`
     .skills-container {
       min-height: 100vh;
-      padding: 40px 0;
-      background: #f9fafb;
+      padding: 120px 30px 60px;
+      background: var(--bg-primary);
+      transition: background-color 0.3s ease;
     }
 
     .container {
@@ -107,15 +108,17 @@ import { Skill } from '../../models/skill.model';
     .page-title {
       font-size: 3rem;
       font-weight: 700;
-      color: #1f2937;
+      color: var(--text-heading);
       margin-bottom: 15px;
+      transition: color 0.3s ease;
     }
 
     .page-subtitle {
       font-size: 1.25rem;
-      color: #6b7280;
+      color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto;
+      transition: color 0.3s ease;
     }
 
     .filter-section {
@@ -131,24 +134,34 @@ import { Skill } from '../../models/skill.model';
 
     .filter-tab {
       padding: 10px 20px;
-      border: 2px solid #e5e7eb;
-      background: white;
+      border: 2px solid var(--border-color);
+      background: var(--card-bg);
       border-radius: 25px;
       cursor: pointer;
       transition: all 0.3s ease;
       font-weight: 500;
-      color: #374151;
+      color: var(--text-primary);
     }
 
     .filter-tab:hover {
-      border-color: #2563eb;
-      color: #2563eb;
+      border-color: #667eea;
+      color: #667eea;
     }
 
     .filter-tab.active {
-      background: #2563eb;
-      border-color: #2563eb;
+      background: #667eea;
+      border-color: #667eea;
       color: white;
+    }
+
+    :host-context(.dark-mode) .filter-tab:hover {
+      border-color: #a78bfa;
+      color: #a78bfa;
+    }
+
+    :host-context(.dark-mode) .filter-tab.active {
+      background: #a78bfa;
+      border-color: #a78bfa;
     }
 
     .skills-grid {
@@ -159,15 +172,20 @@ import { Skill } from '../../models/skill.model';
     }
 
     .skill-card {
-      background: white;
+      background: var(--card-bg);
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .skill-card:hover {
       transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    :host-context(.dark-mode) .skill-card {
+      background: rgba(30, 41, 59, 0.5);
     }
 
     .skill-header {
@@ -180,28 +198,38 @@ import { Skill } from '../../models/skill.model';
     .skill-name {
       font-size: 1.25rem;
       font-weight: 600;
-      color: #1f2937;
+      color: var(--text-heading);
       margin: 0;
+      transition: color 0.3s ease;
     }
 
     .skill-level {
       font-size: 1.1rem;
       font-weight: 700;
-      color: #2563eb;
+      color: #667eea;
+    }
+
+    :host-context(.dark-mode) .skill-level {
+      color: #a78bfa;
     }
 
     .skill-bar {
       height: 8px;
-      background: #e5e7eb;
+      background: var(--border-color);
       border-radius: 4px;
       overflow: hidden;
       margin-bottom: 15px;
+      transition: background 0.3s ease;
     }
 
     .skill-progress {
       height: 100%;
-      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      background: linear-gradient(90deg, #667eea, #764ba2);
       transition: width 0.8s ease;
+    }
+
+    :host-context(.dark-mode) .skill-progress {
+      background: linear-gradient(90deg, #a78bfa, #ec4899);
     }
 
     .skill-meta {
@@ -210,10 +238,11 @@ import { Skill } from '../../models/skill.model';
 
     .skill-type {
       font-size: 0.9rem;
-      color: #6b7280;
-      background: #f3f4f6;
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
       padding: 4px 12px;
       border-radius: 12px;
+      transition: all 0.3s ease;
     }
 
     .no-skills {
@@ -223,12 +252,14 @@ import { Skill } from '../../models/skill.model';
 
     .no-skills-content h3 {
       font-size: 1.5rem;
-      color: #374151;
+      color: var(--text-heading);
       margin-bottom: 10px;
+      transition: color 0.3s ease;
     }
 
     .no-skills-content p {
-      color: #6b7280;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
     }
 
     .loading {
@@ -239,11 +270,15 @@ import { Skill } from '../../models/skill.model';
     .loading-spinner {
       width: 40px;
       height: 40px;
-      border: 4px solid #e5e7eb;
-      border-top: 4px solid #2563eb;
+      border: 4px solid var(--border-color);
+      border-top: 4px solid #667eea;
       border-radius: 50%;
       animation: spin 1s linear infinite;
       margin: 0 auto 20px;
+    }
+
+    :host-context(.dark-mode) .loading-spinner {
+      border-top-color: #a78bfa;
     }
 
     @keyframes spin {
