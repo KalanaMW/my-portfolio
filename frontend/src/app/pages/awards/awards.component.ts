@@ -266,24 +266,25 @@ import { CommonModule } from '@angular/common';
 
     .award-image-wrapper {
       width: 100%;
-      height: 220px;
+      height: 180px;
       margin-bottom: 1.5rem;
       border-radius: 12px;
       overflow: hidden;
       background: transparent;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       position: relative;
     }
 
     .award-image {
       width: 100%;
-      height: 160%;
+      min-height: 400px;
       object-fit: cover;
-      object-position: center 20%;
+      object-position: center 15%;
       display: block;
       transition: transform 0.3s ease;
+      clip-path: inset(0 0 50% 0);
     }
 
     .award-card:hover .award-image {
