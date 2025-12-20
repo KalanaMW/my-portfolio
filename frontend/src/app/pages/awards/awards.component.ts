@@ -274,15 +274,17 @@ import { CommonModule } from '@angular/common';
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
     }
 
     .award-image {
       width: 100%;
-      height: 100%;
+      height: 120%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 25%;
       display: block;
       transition: transform 0.3s ease;
+      margin-top: -10%;
     }
 
     .award-card:hover .award-image {
