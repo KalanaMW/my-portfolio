@@ -46,15 +46,12 @@ import { environment } from '../../../environments/environment';
             <div class="hero-stats">
               <div class="stat-item stat-technologies glass" style="background-image: url('assets/Technologies background.png');" (click)="scrollTo('skills')">
                 <div class="stat-text">Many Technologies</div>
-                <div class="stat-label">Expertise</div>
               </div>
               <div class="stat-item stat-projects glass" style="background-image: url('assets/Projects background.png');" (click)="scrollTo('projects')">
                 <div class="stat-text">Hands-on Experiences</div>
-                <div class="stat-label">Portfolio</div>
               </div>
               <div class="stat-item stat-awards glass" style="background-image: url('assets/Awards background.png');" (click)="scrollTo('awards')">
                 <div class="stat-text">Multiple Awards</div>
-                <div class="stat-label">Achievements</div>
               </div>
             </div>
             <div class="hero-buttons">
@@ -268,6 +265,51 @@ import { environment } from '../../../environments/environment';
             </div>
 
             <ng-container *ngIf="showMoreProjects">
+              <div class="project-card">
+                <div class="project-image-carousel">
+                  <div class="carousel-container">
+                    <div class="carousel-track" [style.transform]="'translateX(-' + (carouselIndices['libreum'] || 0) * 100 + '%)'">
+                      <img src="assets/Libreum_1.png" alt="Libréum 1" class="carousel-image">
+                      <img src="assets/Libreum_2.png" alt="Libréum 2" class="carousel-image">
+                      <img src="assets/Libreum_3.png" alt="Libréum 3" class="carousel-image">
+                    </div>
+                  </div>
+                  <button class="carousel-btn carousel-prev" (click)="previousImage('libreum')" [disabled]="(carouselIndices['libreum'] || 0) === 0">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                  </button>
+                  <button class="carousel-btn carousel-next" (click)="nextImage('libreum', 3)" [disabled]="(carouselIndices['libreum'] || 0) === 2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </button>
+                  <div class="carousel-indicators">
+                    <button *ngFor="let i of [0, 1, 2]" class="indicator" [class.active]="(carouselIndices['libreum'] || 0) === i" (click)="goToImage('libreum', i)"></button>
+                  </div>
+                  <div class="project-badge">COMPLETED</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-header">
+                    <h3>Libréum – Library Management System</h3>
+                    <p class="project-year">Dec 2025</p>
+                  </div>
+                  <p class="project-description">
+                    Full-stack web application enabling users to manage personal book collections with secure JWT authentication and role-based access control.
+                    Features intuitive interface for cataloging, searching, and maintaining book records with real-time validation and smooth animations.
+                  </p>
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">React 18</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">ASP.NET Core</span>
+                    <span class="tech-tag">Entity Framework</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">Framer Motion</span>
+                  </div>
+                </div>
+              </div>
+
               <div class="project-card">
                 <div class="project-image-placeholder">
                   <img src="assets/portfolio web app.png" alt="Portfolio Web App" class="project-image">
@@ -1044,18 +1086,16 @@ import { environment } from '../../../environments/environment';
     }
 
     .hero-content {
-      max-width: 1400px;
+      max-width: 1300px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
       align-items: center;
-      justify-items: center;
       z-index: 1;
     }
 
     .hero-text {
-      justify-self: start;
       width: 100%;
     }
 
@@ -1234,9 +1274,9 @@ import { environment } from '../../../environments/environment';
       background: transparent;
       backdrop-filter: none;
       border-radius: 20px;
-      padding: 32px 24px;
+      padding: 28px 20px;
       text-align: center;
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      border: none;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
@@ -1244,6 +1284,10 @@ import { environment } from '../../../environments/environment';
       background-position: center;
       background-repeat: no-repeat;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
     }
 
     .stat-item::before {
@@ -1277,16 +1321,16 @@ import { environment } from '../../../environments/environment';
     }
 
     .stat-text {
-      font-size: 1.35rem;
+      font-size: 1.1rem;
       font-weight: 800;
       color: var(--palette-orange);
       text-shadow: 2px 2px 8px rgba(var(--orange-rgb), 0.4), 0 0 20px rgba(var(--orange-rgb), 0.3);
-      margin-bottom: 8px;
+      margin-bottom: 0;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       z-index: 2;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       line-height: 1.3;
     }
 
@@ -2067,6 +2111,125 @@ import { environment } from '../../../environments/environment';
       border-radius: 20px 20px 0 0;
       overflow: hidden;
       position: relative;
+    }
+
+    .project-image-carousel {
+      width: 100%;
+      height: 250px;
+      border-radius: 20px 20px 0 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-image-carousel .carousel-container {
+      overflow: hidden;
+      border-radius: 20px 20px 0 0;
+      position: relative;
+      height: 100%;
+    }
+
+    .project-image-carousel .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+      height: 100%;
+    }
+
+    .project-image-carousel .carousel-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      flex-shrink: 0;
+      cursor: pointer;
+      border: 2px solid var(--border-color);
+    }
+
+    .project-image-carousel .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    :host-context(.dark-mode) .project-image-carousel .carousel-btn {
+      background: rgba(34, 34, 34, 0.9);
+    }
+
+    .project-image-carousel .carousel-btn:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    :host-context(.dark-mode) .project-image-carousel .carousel-btn:hover {
+      background: rgba(34, 34, 34, 1);
+    }
+
+    .project-image-carousel .carousel-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .project-image-carousel .carousel-btn svg {
+      color: var(--text-primary);
+    }
+
+    .project-image-carousel .carousel-prev {
+      left: 10px;
+    }
+
+    .project-image-carousel .carousel-next {
+      right: 10px;
+    }
+
+    .project-image-carousel .carousel-indicators {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 2;
+    }
+
+    .project-image-carousel .carousel-indicators .indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+
+    .project-image-carousel .carousel-indicators .indicator.active {
+      background: var(--palette-orange);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    .project-image-carousel .project-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 103, 0, 0.95);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 3;
     }
 
     /* Removed overlay from project images as requested */
@@ -3081,7 +3244,8 @@ export class HomeComponent implements OnInit {
   showMoreActivities = false;
   
   carouselIndices: { [key: string]: number } = {
-    'csr': 0
+    'csr': 0,
+    'libreum': 0
   };
   
   expandedItems: { [key: string]: boolean } = {
