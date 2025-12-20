@@ -620,7 +620,6 @@ import { environment } from '../../../environments/environment';
             <div class="award-card">
               <div class="award-image-container">
                 <img src="assets/Coderush 2024.JPG" alt="CodeRush 2024" class="award-image">
-                <div class="award-overlay"></div>
               </div>
               <div class="award-content">
                 <h3 class="award-title">1st Runners-Up</h3>
@@ -631,7 +630,6 @@ import { environment } from '../../../environments/environment';
             <div class="award-card">
               <div class="award-image-container">
                 <img src="assets/CodeArena.jpg" alt="CodeAréna '25" class="award-image">
-                <div class="award-overlay"></div>
               </div>
               <div class="award-content">
                 <h3 class="award-title">1st Runners-Up</h3>
@@ -642,7 +640,6 @@ import { environment } from '../../../environments/environment';
             <div class="award-card">
               <div class="award-image-container">
                 <img src="assets/Devthon 2.0.jpg" alt="Devthon 2.0" class="award-image">
-                <div class="award-overlay"></div>
               </div>
               <div class="award-content">
                 <h3 class="award-title">2nd Runners-Up</h3>
@@ -1323,8 +1320,8 @@ import { environment } from '../../../environments/environment';
     .stat-text {
       font-size: 1.1rem;
       font-weight: 800;
-      color: var(--palette-orange);
-      text-shadow: 2px 2px 8px rgba(var(--orange-rgb), 0.4), 0 0 20px rgba(var(--orange-rgb), 0.3);
+      color: var(--palette-cream);
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
       margin-bottom: 0;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
@@ -1336,12 +1333,12 @@ import { environment } from '../../../environments/environment';
 
     .stat-item:hover .stat-text {
       transform: scale(1.1);
-      text-shadow: 3px 3px 12px rgba(var(--orange-rgb), 0.6), 0 0 30px rgba(var(--orange-rgb), 0.5);
+      text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.65);
     }
 
     :host-context(.dark-mode) .stat-text {
-      color: var(--palette-orange);
-      text-shadow: 2px 2px 10px rgba(var(--orange-rgb), 0.5), 0 0 25px rgba(var(--orange-rgb), 0.4);
+      color: var(--palette-cream);
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
     }
 
     .stat-item:hover::before {
@@ -2042,8 +2039,8 @@ import { environment } from '../../../environments/environment';
       top: 20px;
       right: 20px;
       padding: 8px 16px;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--palette-sand) 100%);
-      color: var(--palette-cream);
+      background: rgba(var(--orange-rgb), 0.95);
+      color: white;
       border-radius: 20px;
       font-size: 0.75rem;
       font-weight: 700;
@@ -2053,7 +2050,7 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .project-badge {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--palette-sand) 100%);
+      background: rgba(var(--orange-rgb), 0.95);
     }
 
     .project-header {
@@ -2222,7 +2219,7 @@ import { environment } from '../../../environments/environment';
       position: absolute;
       top: 15px;
       right: 15px;
-      background: rgba(255, 103, 0, 0.95);
+      background: rgba(var(--orange-rgb), 0.95);
       color: white;
       padding: 6px 16px;
       border-radius: 20px;
@@ -2429,17 +2426,6 @@ import { environment } from '../../../environments/environment';
       background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.06) 0%, rgba(var(--sand-rgb), 0.45) 100%);
     }
 
-    .award-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 60%;
-      background: linear-gradient(to top, rgba(var(--charcoal-rgb), 0.78) 0%, rgba(var(--charcoal-rgb), 0.52) 50%, transparent 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
-
     :host-context(.dark-mode) .award-image-container {
       background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.10) 0%, rgba(var(--sand-rgb), 0.35) 100%);
     }
@@ -2474,10 +2460,6 @@ import { environment } from '../../../environments/environment';
 
     .award-card:hover .award-image {
       transform: scale(1.1);
-    }
-
-    .award-card:hover .award-overlay {
-      background: linear-gradient(to top, rgba(var(--charcoal-rgb), 0.86) 0%, rgba(var(--charcoal-rgb), 0.58) 50%, transparent 100%);
     }
 
     .award-content {

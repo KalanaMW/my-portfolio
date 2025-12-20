@@ -372,18 +372,18 @@
   letter-spacing: 0.5px;
 
   &.ongoing {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: rgba(var(--orange-rgb), 0.95);
     color: white;
   }
 
   &.completed {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: rgba(var(--orange-rgb), 0.95);
     color: white;
   }
 }
 
 :host-context(.dark-mode) .project-badge.completed {
-  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+  background: rgba(var(--orange-rgb), 0.95);
 }
 
 .project-year {

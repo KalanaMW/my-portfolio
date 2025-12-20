@@ -709,7 +709,7 @@ import { RouterLink } from '@angular/router';
     .project-badge {
       display: inline-block;
       padding: 6px 14px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: rgba(var(--orange-rgb), 0.95);
       color: white;
       border-radius: 20px;
       font-size: 0.75rem;
