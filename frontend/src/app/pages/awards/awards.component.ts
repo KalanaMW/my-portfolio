@@ -266,7 +266,7 @@ import { CommonModule } from '@angular/common';
 
     .award-image-wrapper {
       width: 100%;
-      height: 250px;
+      height: 220px;
       margin-bottom: 1.5rem;
       border-radius: 12px;
       overflow: hidden;
@@ -279,12 +279,11 @@ import { CommonModule } from '@angular/common';
 
     .award-image {
       width: 100%;
-      height: 120%;
+      height: 160%;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center 20%;
       display: block;
       transition: transform 0.3s ease;
-      margin-top: -10%;
     }
 
     .award-card:hover .award-image {
