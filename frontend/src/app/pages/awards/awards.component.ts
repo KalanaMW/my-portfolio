@@ -20,21 +20,27 @@ import { CommonModule } from '@angular/common';
           <h2 class="section-title">Competition Awards</h2>
           <div class="awards-grid">
             <div class="award-card highlight">
-              <div class="award-badge">🥈</div>
+              <div class="award-image-wrapper">
+                <img src="https://res.cloudinary.com/dzzqefqkr/image/upload/v1734688800/coderush_tz6jy8.png" alt="CodeRush 2024 Award" class="award-image">
+              </div>
               <h3 class="award-title">1st Runners-Up</h3>
               <p class="award-event">CodeRush 2024</p>
               <p class="award-description">Competitive programming competition showcasing algorithmic problem-solving skills.</p>
             </div>
 
             <div class="award-card highlight">
-              <div class="award-badge">🥈</div>
+              <div class="award-image-wrapper">
+                <img src="https://res.cloudinary.com/dzzqefqkr/image/upload/v1734688801/codearena_nxtslg.png" alt="CodeAréna '25 Award" class="award-image">
+              </div>
               <h3 class="award-title">1st Runners-Up</h3>
               <p class="award-event">CodeAréna '25</p>
               <p class="award-description">Software development competition demonstrating full-stack development expertise.</p>
             </div>
 
             <div class="award-card">
-              <div class="award-badge">🥉</div>
+              <div class="award-image-wrapper">
+                <img src="https://res.cloudinary.com/dzzqefqkr/image/upload/v1734688800/devthon_gzswme.png" alt="Devthon 2.0 Award" class="award-image">
+              </div>
               <h3 class="award-title">2nd Runners-Up</h3>
               <p class="award-event">Devthon 2.0</p>
               <p class="award-description">Hackathon focused on innovative solutions and rapid prototyping.</p>
@@ -256,6 +262,31 @@ import { CommonModule } from '@angular/common';
     :host-context(.dark-mode) .award-card.highlight {
       background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
       border-color: #a78bfa;
+    }
+
+    .award-image-wrapper {
+      width: 100%;
+      height: 250px;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .award-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .award-card:hover .award-image {
+      transform: scale(1.05);
     }
 
     .award-badge {
