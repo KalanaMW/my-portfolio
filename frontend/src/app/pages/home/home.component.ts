@@ -313,7 +313,7 @@ import { environment } from '../../../environments/environment';
               <div class="project-card">
                 <div class="project-image-placeholder">
                   <img src="assets/portfolio web app.png" alt="Portfolio Web App" class="project-image">
-                  <div class="project-badge">ONGOING</div>
+                  <div class="project-badge">Completed</div>
                 </div>
                 <div class="project-content">
                   <div class="project-header">
