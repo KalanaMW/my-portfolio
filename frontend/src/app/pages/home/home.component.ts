@@ -41,20 +41,20 @@ import { environment } from '../../../environments/environment';
             <h1 class="hero-title">Kalana Warnakulasooriya</h1>
             <h2 class="hero-role">Software Engineering Intern</h2>
             <p class="hero-tagline">
-              Enthusiastic IT & Management undergraduate specializing in software engineering and web development
+              IT & Management undergraduate passionate about building scalable web applications and solving real-world problems through technology
             </p>
             <div class="hero-stats">
-              <div class="stat-item stat-technologies" style="background-image: url('assets/Technologies background.png');">
-                <div class="stat-number" [attr.data-target]="totalSkills">0</div>
-                <div class="stat-label">Technologies</div>
+              <div class="stat-item stat-technologies glass" style="background-image: url('assets/Technologies background.png');" (click)="scrollTo('skills')">
+                <div class="stat-text">Many Technologies</div>
+                <div class="stat-label">Expertise</div>
               </div>
-              <div class="stat-item stat-projects" style="background-image: url('assets/Projets background.png');">
-                <div class="stat-number" [attr.data-target]="totalProjects">0</div>
-                <div class="stat-label">Major Projects</div>
+              <div class="stat-item stat-projects glass" style="background-image: url('assets/Projects background.png');" (click)="scrollTo('projects')">
+                <div class="stat-text">Hands-on Experiences</div>
+                <div class="stat-label">Portfolio</div>
               </div>
-              <div class="stat-item stat-awards" style="background-image: url('assets/Awards background.png');">
-                <div class="stat-number" [attr.data-target]="3">0</div>
-                <div class="stat-label">Awards Won</div>
+              <div class="stat-item stat-awards glass" style="background-image: url('assets/Awards background.png');" (click)="scrollTo('awards')">
+                <div class="stat-text">Multiple Awards</div>
+                <div class="stat-label">Achievements</div>
               </div>
             </div>
             <div class="hero-buttons">
@@ -67,21 +67,29 @@ import { environment } from '../../../environments/environment';
               <a href="#contact" class="btn btn-secondary" (click)="scrollTo('contact')">
                 <span>Get In Touch</span>
               </a>
+              <a href="assets/cv/Kalana_Warnakulasooriya_CV.pdf" download class="btn btn-cv">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download CV</span>
+              </a>
             </div>
             <div class="hero-social">
               <a href="mailto:kalanam890@gmail.com" class="social-link" title="Email">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/>
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                 </svg>
               </a>
               <a href="https://www.linkedin.com/in/kalana-madhumalka-19b787334" target="_blank" class="social-link" title="LinkedIn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/>
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/>
                 </svg>
               </a>
               <a href="https://github.com/KalanaMW" target="_blank" class="social-link" title="GitHub">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="#181717"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="currentColor"/>
                 </svg>
               </a>
             </div>
@@ -98,10 +106,9 @@ import { environment } from '../../../environments/environment';
           <h2 class="section-title">About Me</h2>
           <div class="about-content">
             <p class="about-text">
-              I am an enthusiastic IT and Management undergraduate who thrives on tackling challenges and finding creative
-              solutions. I have a strong interest in software engineering and web development, and I am seeking a software
-              engineering internship where I can apply my time management and teamwork skills to contribute to collaborative
-              projects and create value efficiently.
+              A results-driven IT & Management undergraduate at University of Moratuwa with a strong foundation in full-stack development.
+              Experienced in leading team projects and developing enterprise-level applications using modern technologies like Next.js, React, Angular,
+              ASP.NET Core, and Spring Boot. Passionate about creating intuitive user experiences and scalable backend architectures.
             </p>
             <div class="about-highlights">
               <div class="highlight-item">
@@ -110,7 +117,7 @@ import { environment } from '../../../environments/environment';
                 </div>
                 <div class="highlight-content">
                   <h3>Focus Areas</h3>
-                  <p>Enterprise Application Development, Web Development, Competitive Gaming</p>
+                  <p>Full-Stack Development, Enterprise Solutions, UI/UX Design, Cloud Integration</p>
                 </div>
               </div>
               <div class="highlight-item">
@@ -118,8 +125,8 @@ import { environment } from '../../../environments/environment';
                   <img src="assets/Soft Skills.png" alt="Soft Skills" class="highlight-image">
                 </div>
                 <div class="highlight-content">
-                  <h3>Soft Skills</h3>
-                  <p>Leadership, Self Learning, Analytical Thinking, Problem Solving, Effective Communication</p>
+                  <h3>Key Strengths</h3>
+                  <p>Team Leadership, Problem Solving, Adaptability, Communication, Continuous Learning</p>
                 </div>
               </div>
             </div>
@@ -167,7 +174,7 @@ import { environment } from '../../../environments/environment';
               <div class="education-content">
                 <div class="education-header">
                   <h3>Maliyadeva College - Kurunegala</h3>
-                  <span class="education-date">2012 - 2025</span>
+                  <span class="education-date">2012 - 2021</span>
                 </div>
                 <div class="education-details">
                   <p class="education-qualification"><strong>G.C.E. Advanced Level 2021 (Physical Science)</strong></p>
@@ -239,7 +246,7 @@ import { environment } from '../../../environments/environment';
             <div class="project-card">
               <div class="project-image-placeholder">
                 <img src="assets/Gearup project.png" alt="GearUp" class="project-image">
-                <div class="project-badge">ONGOING</div>
+                <div class="project-badge">COMPLETED</div>
               </div>
               <div class="project-content">
                 <div class="project-header">
@@ -627,7 +634,7 @@ import { environment } from '../../../environments/environment';
       <section id="activities" class="activities-section">
         <div class="container">
           <div class="section-header">
-            <h2 class="section-title">Extra-Curricular Activities</h2>
+            <h2 class="section-title">Activities</h2>
             <p class="section-subtitle">Leadership, Community Service & Personal Development</p>
           </div>
           
@@ -928,21 +935,42 @@ import { environment } from '../../../environments/environment';
               <div class="contact-methods-grid">
                 <a href="mailto:kalanam890@gmail.com" class="contact-method-card">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/>
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                   </svg>
                   <h3>Email</h3>
                   <p>kalanam890{{ '@' }}gmail.com</p>
                 </a>
+
+                <a href="tel:+94702018278" class="contact-method-card">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="currentColor"/>
+                  </svg>
+                  <div>
+                    <h3>Phone</h3>
+                    <p>+94 70 201 8278</p>
+                  </div>
+                </a>
+
+                <div class="contact-method-card">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                  </svg>
+                  <div>
+                    <h3>Location</h3>
+                    <p>Moratuwa, Sri Lanka</p>
+                  </div>
+                </div>
+
                 <a href="https://www.linkedin.com/in/kalana-madhumalka-19b787334" target="_blank" class="contact-method-card">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/>
                   </svg>
                   <h3>LinkedIn</h3>
                   <p>Connect with me</p>
                 </a>
                 <a href="https://github.com/KalanaMW" target="_blank" class="contact-method-card">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="#181717"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="currentColor"/>
                   </svg>
                   <h3>GitHub</h3>
                   <p>View my repositories</p>
@@ -978,12 +1006,12 @@ import { environment } from '../../../environments/environment';
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
       z-index: -2;
     }
 
     :host-context(.dark-mode) .hero-background {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
     }
 
     .hero-background::before {
@@ -1022,7 +1050,13 @@ import { environment } from '../../../environments/environment';
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
+      justify-items: center;
       z-index: 1;
+    }
+
+    .hero-text {
+      justify-self: start;
+      width: 100%;
     }
 
     .hero-image {
@@ -1038,25 +1072,31 @@ import { environment } from '../../../environments/environment';
       max-width: 450px;
       height: auto;
       border-radius: 30px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 55px 35px -45px rgba(255, 119, 0, 0.8), 0 65px 40px -50px rgba(255, 119, 0, 0.6);
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: fadeInScale 1s ease-out;
-      border: 3px solid transparent;
+      animation: profileFloat 6s ease-in-out infinite, fadeInScale 1s ease-out;
+      border: none;
+      border-bottom: 4px solid rgba(255, 119, 0, 0.8);
+      position: relative;
+      filter: brightness(1.05);
     }
 
     .profile-photo:hover {
-      transform: scale(1.05) translateY(-10px);
-      box-shadow: 0 35px 90px rgba(102, 126, 234, 0.35);
-      border-color: rgba(102, 126, 234, 0.2);
+      transform: scale(1.08) translateY(-15px) rotate(2deg);
+      box-shadow: 0 65px 45px -45px rgba(255, 119, 0, 1), 0 75px 50px -50px rgba(255, 119, 0, 0.8);
+      border-bottom-color: rgba(255, 140, 0, 1);
+      animation-play-state: paused;
+      filter: brightness(1.1);
     }
 
     :host-context(.dark-mode) .profile-photo {
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 55px 35px -45px rgba(255, 119, 0, 0.9), 0 65px 40px -50px rgba(255, 119, 0, 0.7);
+      border-bottom-color: rgba(255, 119, 0, 0.9);
     }
 
     :host-context(.dark-mode) .profile-photo:hover {
-      box-shadow: 0 35px 90px rgba(167, 139, 250, 0.4);
-      border-color: rgba(167, 139, 250, 0.3);
+      box-shadow: 0 65px 45px -45px rgba(255, 119, 0, 1), 0 75px 50px -50px rgba(255, 119, 0, 0.9);
+      border-bottom-color: rgba(255, 140, 0, 1);
     }
 
     @keyframes fadeInScale {
@@ -1070,6 +1110,17 @@ import { environment } from '../../../environments/environment';
       }
     }
 
+    @keyframes profileFloat {
+      0%, 100% {
+        transform: translateY(0px);
+        box-shadow: 0 55px 35px -45px rgba(255, 119, 0, 0.8), 0 65px 40px -50px rgba(255, 119, 0, 0.6);
+      }
+      50% {
+        transform: translateY(-10px);
+        box-shadow: 0 60px 40px -45px rgba(255, 119, 0, 0.9), 0 70px 45px -50px rgba(255, 119, 0, 0.7);
+      }
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -1080,41 +1131,35 @@ import { environment } from '../../../environments/environment';
       font-weight: 600;
       margin-bottom: 12px;
       animation: fadeInUp 0.6s ease-out;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--accent);
       letter-spacing: 0.5px;
     }
 
     :host-context(.dark-mode) .hero-greeting {
-      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--accent);
     }
 
     .hero-title {
       font-size: 4.2rem;
       font-weight: 900;
-      color: #111827;
+      color: var(--text-heading);
       margin-bottom: 18px;
       line-height: 1.05;
       animation: fadeInUp 0.8s ease-out;
       letter-spacing: -0.03em;
       transition: color 0.3s ease;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      text-shadow: 0 2px 4px rgba(var(--charcoal-rgb), 0.08);
     }
 
     :host-context(.dark-mode) .hero-title {
-      color: #ffffff;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      color: var(--text-heading);
+      text-shadow: 0 2px 10px rgba(var(--charcoal-rgb), 0.6);
     }
 
     .hero-role {
       font-size: 2rem;
       font-weight: 700;
-      color: #667eea;
+      color: var(--text-heading);
       margin-bottom: 24px;
       animation: fadeInUp 1s ease-out;
       transition: color 0.3s ease;
@@ -1130,7 +1175,7 @@ import { environment } from '../../../environments/environment';
       left: 0;
       width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      background: var(--accent);
       border-radius: 2px;
       animation: slideIn 1.2s ease-out;
     }
@@ -1145,16 +1190,16 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .hero-role {
-      color: #a78bfa;
+      color: var(--text-heading);
     }
 
     :host-context(.dark-mode) .hero-role::after {
-      background: linear-gradient(90deg, #a78bfa 0%, #ec4899 100%);
+      background: var(--accent);
     }
 
     .hero-tagline {
       font-size: 1.15rem;
-      color: #4b5563;
+      color: var(--text-secondary);
       line-height: 1.7;
       margin-bottom: 35px;
       animation: fadeInUp 1.2s ease-out;
@@ -1162,7 +1207,7 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .hero-tagline {
-      color: #d1d5db;
+      color: var(--text-secondary);
     }
 
     @keyframes fadeInUp {
@@ -1198,6 +1243,7 @@ import { environment } from '../../../environments/environment';
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      cursor: pointer;
     }
 
     .stat-item::before {
@@ -1207,7 +1253,7 @@ import { environment } from '../../../environments/environment';
       left: 0;
       width: 100%;
       height: 100%;
-      background: transparent;
+      background: rgba(0, 0, 0, 0.45);
       transition: all 0.4s ease;
       z-index: 1;
     }
@@ -1217,8 +1263,45 @@ import { environment } from '../../../environments/environment';
       z-index: 2;
     }
 
+    .stat-label {
+      color: var(--palette-orange);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-shadow: 1px 1px 4px rgba(var(--orange-rgb), 0.3), 0 0 10px rgba(var(--orange-rgb), 0.2);
+      letter-spacing: 1px;
+    }
+
+    :host-context(.dark-mode) .stat-label {
+      color: var(--palette-orange);
+      text-shadow: 1px 1px 6px rgba(var(--orange-rgb), 0.4), 0 0 15px rgba(var(--orange-rgb), 0.3);
+    }
+
+    .stat-text {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--palette-orange);
+      text-shadow: 2px 2px 8px rgba(var(--orange-rgb), 0.4), 0 0 20px rgba(var(--orange-rgb), 0.3);
+      margin-bottom: 8px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 2;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      line-height: 1.3;
+    }
+
+    .stat-item:hover .stat-text {
+      transform: scale(1.1);
+      text-shadow: 3px 3px 12px rgba(var(--orange-rgb), 0.6), 0 0 30px rgba(var(--orange-rgb), 0.5);
+    }
+
+    :host-context(.dark-mode) .stat-text {
+      color: var(--palette-orange);
+      text-shadow: 2px 2px 10px rgba(var(--orange-rgb), 0.5), 0 0 25px rgba(var(--orange-rgb), 0.4);
+    }
+
     .stat-item:hover::before {
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0.4);
     }
 
     :host-context(.dark-mode) .stat-item {
@@ -1229,17 +1312,17 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .stat-item::before {
-      background: transparent;
+      background: rgba(0, 0, 0, 0.55);
     }
 
     :host-context(.dark-mode) .stat-item:hover::before {
-      background: rgba(0, 0, 0, 0.15);
+      background: rgba(0, 0, 0, 0.35);
     }
 
     .stat-item:hover {
       transform: translateY(-12px) scale(1.05);
-      box-shadow: 0 20px 50px rgba(102, 126, 234, 0.35);
-      border-color: rgba(102, 126, 234, 0.4);
+      box-shadow: 0 20px 50px rgba(var(--orange-rgb), 0.22);
+      border-color: rgba(var(--orange-rgb), 0.32);
     }
 
     .stat-item:hover .stat-number {
@@ -1251,15 +1334,15 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .stat-item:hover {
-      box-shadow: 0 20px 50px rgba(167, 139, 250, 0.4);
-      border-color: rgba(167, 139, 250, 0.5);
+      box-shadow: 0 20px 50px rgba(var(--orange-rgb), 0.24);
+      border-color: rgba(var(--orange-rgb), 0.34);
     }
 
     .stat-number {
       font-size: 2.8rem;
       font-weight: 900;
       color: #ffffff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 4px rgba(var(--charcoal-rgb), 0.5);
       margin-bottom: 8px;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
@@ -1268,13 +1351,13 @@ import { environment } from '../../../environments/environment';
 
     :host-context(.dark-mode) .stat-number {
       color: #ffffff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 4px rgba(var(--charcoal-rgb), 0.5);
     }
 
     .stat-label {
       font-size: 0.95rem;
       color: #ffffff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      text-shadow: 1px 1px 3px rgba(var(--charcoal-rgb), 0.5);
       font-weight: 600;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
@@ -1283,12 +1366,12 @@ import { environment } from '../../../environments/environment';
 
     :host-context(.dark-mode) .stat-label {
       color: #ffffff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      text-shadow: 1px 1px 3px rgba(var(--charcoal-rgb), 0.5);
     }
 
     :host-context(.dark-mode) .stat-number {
       color: #ffffff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 4px rgba(var(--charcoal-rgb), 0.5);
     }
 
     /* Buttons */
@@ -1314,68 +1397,110 @@ import { environment } from '../../../environments/environment';
     }
 
     .btn-primary {
-      background: #111827;
-      color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      background: var(--accent);
+      color: var(--palette-cream);
+      box-shadow: 0 10px 25px rgba(var(--orange-rgb), 0.25);
     }
 
     .btn-primary:hover {
-      background: #1f2937;
+      filter: brightness(0.95);
       transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 14px 35px rgba(var(--orange-rgb), 0.28);
     }
 
     :host-context(.dark-mode) .btn-primary {
-      background: #f9fafb;
-      color: #111827;
+      background: var(--accent);
+      color: var(--palette-cream);
     }
 
     :host-context(.dark-mode) .btn-primary:hover {
-      background: #e5e7eb;
+      filter: brightness(0.95);
     }
 
     .btn-secondary {
       background: transparent;
-      color: #111827;
-      border: 2px solid #e5e7eb;
+      color: var(--palette-orange);
+      border: 2px solid var(--palette-orange);
     }
 
     .btn-secondary:hover {
-      background: #f9fafb;
-      border-color: #d1d5db;
-      transform: translateY(-2px);
+      background: var(--palette-orange);
+      color: white;
+      border-color: var(--palette-orange);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(var(--orange-rgb), 0.35);
     }
 
     :host-context(.dark-mode) .btn-secondary {
-      color: #f9fafb;
-      border-color: #374151;
+      color: var(--palette-orange);
+      border-color: var(--palette-orange);
     }
 
     :host-context(.dark-mode) .btn-secondary:hover {
-      background: #1f2937;
-      border-color: #4b5563;
+      background: var(--palette-orange);
+      color: white;
+      border-color: var(--palette-orange);
+      box-shadow: 0 10px 30px rgba(var(--orange-rgb), 0.4);
+    }
+
+    .btn-cv {
+      background: var(--palette-orange);
+      color: white;
+      box-shadow: 0 10px 25px rgba(var(--orange-rgb), 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-cv::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-cv:hover::before {
+      left: 100%;
+    }
+
+    .btn-cv:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 35px rgba(var(--orange-rgb), 0.45);
+      filter: brightness(1.05);
+    }
+
+    :host-context(.dark-mode) .btn-cv {
+      background: var(--palette-orange);
+      box-shadow: 0 10px 25px rgba(var(--orange-rgb), 0.35);
+    }
+
+    :host-context(.dark-mode) .btn-cv:hover {
+      box-shadow: 0 14px 35px rgba(var(--orange-rgb), 0.5);
     }
 
     .btn-outline {
       background: transparent;
-      color: #667eea;
-      border: 2px solid #667eea;
+      color: var(--accent);
+      border: 2px solid var(--accent);
     }
 
     .btn-outline:hover {
-      background: #667eea;
-      color: white;
+      background: var(--accent);
+      color: var(--palette-cream);
       transform: translateY(-2px);
     }
 
     :host-context(.dark-mode) .btn-outline {
-      color: #a78bfa;
-      border-color: #a78bfa;
+      color: var(--accent);
+      border-color: var(--accent);
     }
 
     :host-context(.dark-mode) .btn-outline:hover {
-      background: #a78bfa;
-      color: #111827;
+      background: var(--accent);
+      color: var(--palette-cream);
     }
 
     .btn-large {
@@ -1400,9 +1525,13 @@ import { environment } from '../../../environments/environment';
       align-items: center;
       justify-content: center;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 2px solid rgba(102, 126, 234, 0.1);
+      border: 2px solid rgba(var(--orange-rgb), 0.22);
       position: relative;
       overflow: hidden;
+    }
+
+    .social-link svg {
+      color: var(--accent);
     }
 
     .social-link::before {
@@ -1412,7 +1541,7 @@ import { environment } from '../../../environments/environment';
       left: 50%;
       width: 0;
       height: 0;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      background: rgba(var(--orange-rgb), 0.12);
       border-radius: 50%;
       transform: translate(-50%, -50%);
       transition: width 0.4s ease, height 0.4s ease;
@@ -1426,23 +1555,23 @@ import { environment } from '../../../environments/environment';
     .social-link:hover {
       background: white;
       transform: translateY(-8px) scale(1.1);
-      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
-      border-color: rgba(102, 126, 234, 0.3);
+      box-shadow: 0 15px 35px rgba(var(--orange-rgb), 0.22);
+      border-color: rgba(var(--orange-rgb), 0.32);
     }
 
     :host-context(.dark-mode) .social-link {
       background: var(--card-bg);
-      border-color: rgba(167, 139, 250, 0.2);
+      border-color: rgba(var(--orange-rgb), 0.22);
     }
 
     :host-context(.dark-mode) .social-link::before {
-      background: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+      background: rgba(var(--orange-rgb), 0.12);
     }
 
     :host-context(.dark-mode) .social-link:hover {
       background: var(--bg-secondary);
-      box-shadow: 0 15px 35px rgba(167, 139, 250, 0.4);
-      border-color: rgba(167, 139, 250, 0.4);
+      box-shadow: 0 15px 35px rgba(var(--orange-rgb), 0.24);
+      border-color: rgba(var(--orange-rgb), 0.34);
     }
 
     /* Hero Image */
@@ -1454,15 +1583,16 @@ import { environment } from '../../../environments/environment';
     /* Floating Badges */
     .floating-badge {
       position: absolute;
-      background: white;
+      background: var(--glass-bg);
       padding: 12px 20px;
       border-radius: 50px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: var(--glass-shadow);
+      border: 1px solid var(--glass-border);
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 600;
-      color: #374151;
+      color: var(--text-heading);
       animation: floatBadge 3s infinite ease-in-out;
     }
 
@@ -1531,13 +1661,13 @@ import { environment } from '../../../environments/environment';
       display: block;
       width: 100px;
       height: 5px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--palette-orange);
       margin: 20px auto 0;
       border-radius: 3px;
     }
 
     :host-context(.dark-mode) .section-title::after {
-      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+      background: var(--palette-orange);
     }
 
     /* About Summary */
@@ -1575,7 +1705,7 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .highlight-item:hover {
-      border-color: #a78bfa;
+      border-color: rgba(var(--orange-rgb), 0.35);
     }
 
     .highlight-image-container {
@@ -1584,19 +1714,12 @@ import { environment } from '../../../environments/environment';
       overflow: hidden;
       border-radius: 20px 20px 0 0;
       position: relative;
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.10) 0%, rgba(var(--sand-rgb), 0.55) 100%);
     }
 
+    /* Removed overlay for better image visibility */
     .highlight-image-container::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--card-bg) 100%);
-      pointer-events: none;
-      z-index: 1;
+      display: none;
     }
 
     .highlight-image {
@@ -1648,16 +1771,23 @@ import { environment } from '../../../environments/environment';
     }
 
     .education-item {
-      background: var(--card-bg);
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px) saturate(150%);
+      -webkit-backdrop-filter: blur(10px) saturate(150%);
       border-radius: 20px;
       padding: 30px;
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--glass-border);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
       display: flex;
       gap: 25px;
       align-items: flex-start;
+    }
+
+    :host-context(.dark-mode) .education-item {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
     }
 
     .education-item::before {
@@ -1667,7 +1797,7 @@ import { environment } from '../../../environments/environment';
       top: 0;
       width: 4px;
       height: 100%;
-      background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(180deg, var(--accent) 0%, var(--palette-sand) 100%);
       transition: width 0.3s ease;
     }
 
@@ -1678,15 +1808,15 @@ import { environment } from '../../../environments/environment';
     .education-item:hover {
       transform: translateX(8px);
       box-shadow: var(--shadow-lg);
-      border-color: rgba(102, 126, 234, 0.3);
+      border-color: rgba(var(--orange-rgb), 0.35);
     }
 
     :host-context(.dark-mode) .education-item::before {
-      background: linear-gradient(180deg, #a78bfa 0%, #ec4899 100%);
+      background: linear-gradient(180deg, var(--accent) 0%, var(--palette-sand) 100%);
     }
 
     :host-context(.dark-mode) .education-item:hover {
-      border-color: rgba(167, 139, 250, 0.4);
+      border-color: rgba(var(--orange-rgb), 0.38);
     }
 
     .education-logo {
@@ -1696,25 +1826,25 @@ import { environment } from '../../../environments/environment';
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(var(--white-rgb), 0.8);
       border-radius: 16px;
       padding: 12px;
-      border: 2px solid rgba(102, 126, 234, 0.1);
+      border: 2px solid rgba(var(--orange-rgb), 0.16);
       transition: all 0.3s ease;
     }
 
     :host-context(.dark-mode) .education-logo {
       background: var(--bg-secondary);
-      border-color: rgba(167, 139, 250, 0.2);
+      border-color: rgba(var(--orange-rgb), 0.22);
     }
 
     .education-item:hover .education-logo {
       transform: scale(1.05);
-      border-color: rgba(102, 126, 234, 0.3);
+      border-color: rgba(var(--orange-rgb), 0.32);
     }
 
     :host-context(.dark-mode) .education-item:hover .education-logo {
-      border-color: rgba(167, 139, 250, 0.4);
+      border-color: rgba(var(--orange-rgb), 0.34);
     }
 
     .edu-logo {
@@ -1749,8 +1879,8 @@ import { environment } from '../../../environments/environment';
     .education-date {
       font-size: 0.95rem;
       font-weight: 600;
-      color: #667eea;
-      background: rgba(102, 126, 234, 0.1);
+      color: var(--accent);
+      background: rgba(var(--orange-rgb), 0.14);
       padding: 6px 16px;
       border-radius: 20px;
       white-space: nowrap;
@@ -1758,20 +1888,20 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .education-date {
-      color: #a78bfa;
-      background: rgba(167, 139, 250, 0.15);
+      color: var(--accent);
+      background: rgba(var(--orange-rgb), 0.16);
     }
 
     .education-institution {
       font-size: 1.1rem;
-      color: #667eea;
+      color: var(--accent);
       font-weight: 600;
       margin: 8px 0;
       transition: color 0.3s ease;
     }
 
     :host-context(.dark-mode) .education-institution {
-      color: #a78bfa;
+      color: var(--accent);
     }
 
     .education-gpa {
@@ -1818,14 +1948,21 @@ import { environment } from '../../../environments/environment';
     }
 
     .project-card {
-      background: var(--card-bg);
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px) saturate(150%);
+      -webkit-backdrop-filter: blur(10px) saturate(150%);
       border-radius: 20px;
       padding: 0;
       box-shadow: var(--shadow-md);
       transition: all 0.4s ease;
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--glass-border);
       position: relative;
       overflow: hidden;
+    }
+
+    :host-context(.dark-mode) .project-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
     }
 
     .project-content {
@@ -1839,7 +1976,7 @@ import { environment } from '../../../environments/environment';
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+      background: linear-gradient(90deg, transparent, rgba(var(--orange-rgb), 0.07), transparent);
       transition: left 0.5s ease;
     }
 
@@ -1853,7 +1990,7 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .project-card:hover {
-      border-color: #a78bfa;
+      border-color: rgba(var(--orange-rgb), 0.35);
     }
 
     .project-badge {
@@ -1861,18 +1998,18 @@ import { environment } from '../../../environments/environment';
       top: 20px;
       right: 20px;
       padding: 8px 16px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--palette-sand) 100%);
+      color: var(--palette-cream);
       border-radius: 20px;
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.5px;
       z-index: 2;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(var(--charcoal-rgb), 0.22);
     }
 
     :host-context(.dark-mode) .project-badge {
-      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+      background: linear-gradient(135deg, var(--accent) 0%, var(--palette-sand) 100%);
     }
 
     .project-header {
@@ -1910,8 +2047,8 @@ import { environment } from '../../../environments/environment';
 
     .tech-tag {
       padding: 6px 12px;
-      background: rgba(102, 126, 234, 0.1);
-      color: #667eea;
+      background: rgba(var(--orange-rgb), 0.14);
+      color: var(--accent);
       border-radius: 8px;
       font-size: 0.85rem;
       font-weight: 600;
@@ -1919,33 +2056,22 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .tech-tag {
-      background: rgba(167, 139, 250, 0.2);
-      color: #a78bfa;
+      background: rgba(var(--orange-rgb), 0.16);
+      color: var(--accent);
     }
 
     .project-image-placeholder {
       width: 100%;
       height: 250px;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.10) 0%, rgba(var(--sand-rgb), 0.55) 100%);
       border-radius: 20px 20px 0 0;
       overflow: hidden;
       position: relative;
     }
 
+    /* Removed overlay from project images as requested */
     .project-image-placeholder::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    :host-context(.dark-mode) .project-image-placeholder::after {
-      background: linear-gradient(to bottom, rgba(30, 41, 59, 0) 0%, rgba(30, 41, 59, 0.4) 100%);
+      display: none;
     }
 
     .project-image {
@@ -1980,12 +2106,12 @@ import { environment } from '../../../environments/environment';
 
     .view-more-btn:hover {
       transform: translateY(-2px);
-      border-color: rgba(102, 126, 234, 0.45);
+      border-color: rgba(var(--orange-rgb), 0.35);
       box-shadow: var(--shadow-md);
     }
 
     :host-context(.dark-mode) .view-more-btn:hover {
-      border-color: rgba(167, 139, 250, 0.55);
+      border-color: rgba(var(--orange-rgb), 0.38);
     }
 
     .view-more-btn .chevron {
@@ -2018,7 +2144,7 @@ import { environment } from '../../../environments/environment';
     .tech-category:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-md);
-      border-color: #667eea;
+      border-color: rgba(var(--orange-rgb), 0.38);
     }
 
     :host-context(.dark-mode) .tech-category {
@@ -2026,7 +2152,7 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .tech-category:hover {
-      border-color: #a78bfa;
+      border-color: rgba(var(--orange-rgb), 0.4);
     }
 
     .tech-category-title {
@@ -2035,11 +2161,11 @@ import { environment } from '../../../environments/environment';
       color: var(--text-heading);
       margin-bottom: 20px;
       padding-bottom: 15px;
-      border-bottom: 2px solid #667eea;
+      border-bottom: 2px solid rgba(var(--orange-rgb), 0.55);
     }
 
     :host-context(.dark-mode) .tech-category-title {
-      border-bottom-color: #a78bfa;
+      border-bottom-color: rgba(var(--orange-rgb), 0.55);
     }
 
     .tech-items {
@@ -2050,8 +2176,10 @@ import { environment } from '../../../environments/environment';
 
     .tech-item {
       padding: 10px 18px;
-      background: var(--bg-primary);
-      border: 2px solid rgba(102, 126, 234, 0.2);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px) saturate(150%);
+      -webkit-backdrop-filter: blur(8px) saturate(150%);
+      border: 1px solid rgba(var(--orange-rgb), 0.28);
       border-radius: 10px;
       font-size: 0.95rem;
       font-weight: 600;
@@ -2068,20 +2196,22 @@ import { environment } from '../../../environments/environment';
     }
 
     .tech-item:hover {
-      background: #667eea;
-      color: white;
-      border-color: #667eea;
+      background: var(--accent);
+      color: var(--palette-cream);
+      border-color: rgba(var(--orange-rgb), 0.55);
       transform: scale(1.05);
     }
 
     :host-context(.dark-mode) .tech-item {
-      background: rgba(15, 23, 42, 0.6);
-      border-color: rgba(167, 139, 250, 0.3);
+      background: rgba(var(--charcoal-rgb), 0.55);
+      backdrop-filter: blur(8px) saturate(150%);
+      -webkit-backdrop-filter: blur(8px) saturate(150%);
+      border-color: rgba(var(--orange-rgb), 0.28);
     }
 
     :host-context(.dark-mode) .tech-item:hover {
-      background: #a78bfa;
-      border-color: #a78bfa;
+      background: var(--accent);
+      border-color: rgba(var(--orange-rgb), 0.55);
     }
 
     /* Awards Section */
@@ -2100,29 +2230,32 @@ import { environment } from '../../../environments/environment';
     }
 
     .award-card {
-      background: var(--card-bg);
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
       border-radius: 24px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--glass-shadow);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--glass-border);
       position: relative;
+    }
+
+    :host-context(.dark-mode) .award-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
     }
 
     .award-card:hover {
       transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
-      border-color: rgba(102, 126, 234, 0.3);
-    }
-
-    :host-context(.dark-mode) .award-card {
-      background: var(--card-bg);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 40px rgba(var(--orange-rgb), 0.18);
+      border-color: rgba(var(--orange-rgb), 0.32);
     }
 
     :host-context(.dark-mode) .award-card:hover {
-      box-shadow: 0 20px 40px rgba(167, 139, 250, 0.4);
-      border-color: rgba(167, 139, 250, 0.4);
+      box-shadow: 0 20px 40px rgba(var(--orange-rgb), 0.22);
+      border-color: rgba(var(--orange-rgb), 0.34);
     }
 
     .award-image-container {
@@ -2130,7 +2263,7 @@ import { environment } from '../../../environments/environment';
       height: 400px;
       overflow: hidden;
       position: relative;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+      background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.06) 0%, rgba(var(--sand-rgb), 0.45) 100%);
     }
 
     .award-overlay {
@@ -2139,13 +2272,13 @@ import { environment } from '../../../environments/environment';
       left: 0;
       right: 0;
       height: 60%;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+      background: linear-gradient(to top, rgba(var(--charcoal-rgb), 0.78) 0%, rgba(var(--charcoal-rgb), 0.52) 50%, transparent 100%);
       z-index: 1;
       pointer-events: none;
     }
 
     :host-context(.dark-mode) .award-image-container {
-      background: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+      background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.10) 0%, rgba(var(--sand-rgb), 0.35) 100%);
     }
 
     .award-placeholder {
@@ -2154,16 +2287,16 @@ import { environment } from '../../../environments/environment';
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #667eea20 0%, #764ba250 100%);
+      background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.10) 0%, rgba(var(--sand-rgb), 0.50) 100%);
     }
 
     :host-context(.dark-mode) .award-placeholder {
-      background: linear-gradient(135deg, #a78bfa30 0%, #ec489950 100%);
+      background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.12) 0%, rgba(var(--sand-rgb), 0.40) 100%);
     }
 
     .award-badge-large {
       font-size: 8rem;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+      filter: drop-shadow(0 4px 8px rgba(var(--charcoal-rgb), 0.12));
     }
 
     .award-image {
@@ -2181,7 +2314,7 @@ import { environment } from '../../../environments/environment';
     }
 
     .award-card:hover .award-overlay {
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+      background: linear-gradient(to top, rgba(var(--charcoal-rgb), 0.86) 0%, rgba(var(--charcoal-rgb), 0.58) 50%, transparent 100%);
     }
 
     .award-content {
@@ -2197,28 +2330,21 @@ import { environment } from '../../../environments/environment';
       color: var(--text-heading);
       margin-bottom: 0.75rem;
       transition: all 0.3s ease;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
 
     :host-context(.dark-mode) .award-title {
-      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--text-heading);
     }
 
     .award-event {
       font-size: 1.1rem;
-      color: #667eea;
+      color: var(--accent);
       font-weight: 600;
       margin-bottom: 1rem;
     }
 
     :host-context(.dark-mode) .award-event {
-      color: #a78bfa;
+      color: var(--accent);
     }
 
     .award-description {
@@ -2230,18 +2356,18 @@ import { environment } from '../../../environments/environment';
     /* Contact Section */
     .contact-section {
       padding: 80px 20px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      background: var(--bg-primary);
+      color: var(--text-primary);
     }
 
     :host-context(.dark-mode) .contact-section {
-      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+      background: var(--bg-primary);
     }
 
     .section-subtitle {
       font-size: 1.2rem;
       margin-bottom: 40px;
-      opacity: 0.95;
+      color: var(--text-secondary);
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
@@ -2259,11 +2385,18 @@ import { environment } from '../../../environments/environment';
 
     /* Contact Form Styles */
     .contact-form-container {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
+      background: var(--glass-bg-strong);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-radius: 24px;
       padding: 40px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid var(--glass-border-strong);
+      box-shadow: var(--glass-shadow-strong);
+    }
+
+    :host-context(.dark-mode) .contact-form-container {
+      background: var(--glass-bg-strong);
+      border: 1px solid var(--glass-border-strong);
     }
 
     .contact-form {
@@ -2281,33 +2414,41 @@ import { environment } from '../../../environments/environment';
     .form-group label {
       font-weight: 600;
       font-size: 0.95rem;
-      color: white;
-      opacity: 0.95;
+      color: var(--text-heading);
     }
 
     .form-input,
     .form-textarea {
       padding: 14px 18px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
+      border: 2px solid var(--border-color);
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.15);
-      color: white;
+      background: rgba(var(--white-rgb), 0.55);
+      color: var(--text-primary);
       font-size: 1rem;
       font-family: inherit;
       transition: all 0.3s ease;
       outline: none;
     }
 
+    :host-context(.dark-mode) .form-input,
+    :host-context(.dark-mode) .form-textarea {
+      background: rgba(var(--charcoal-rgb), 0.6);
+    }
+
     .form-input::placeholder,
     .form-textarea::placeholder {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(var(--charcoal-rgb), 0.55);
+    }
+
+    :host-context(.dark-mode) .form-input::placeholder,
+    :host-context(.dark-mode) .form-textarea::placeholder {
+      color: rgba(var(--cream-rgb), 0.55);
     }
 
     .form-input:focus,
     .form-textarea:focus {
-      border-color: rgba(255, 255, 255, 0.6);
-      background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+      border-color: rgba(var(--orange-rgb), 0.55);
+      box-shadow: 0 0 0 4px rgba(var(--orange-rgb), 0.12);
     }
 
     .form-textarea {
@@ -2317,8 +2458,8 @@ import { environment } from '../../../environments/environment';
 
     .submit-btn {
       padding: 16px 32px;
-      background: white;
-      color: #667eea;
+      background: var(--accent);
+      color: var(--palette-cream);
       border: none;
       border-radius: 12px;
       font-size: 1.1rem;
@@ -2330,8 +2471,7 @@ import { environment } from '../../../environments/environment';
 
     .submit-btn:hover:not(:disabled) {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 12px 28px rgba(var(--orange-rgb), 0.22);
     }
 
     .submit-btn:disabled {
@@ -2341,22 +2481,26 @@ import { environment } from '../../../environments/environment';
 
     .success-message {
       padding: 15px;
-      background: rgba(46, 213, 115, 0.2);
-      border: 2px solid rgba(46, 213, 115, 0.5);
+      background: rgba(var(--orange-rgb), 0.12);
+      border: 2px solid rgba(var(--orange-rgb), 0.35);
       border-radius: 12px;
-      color: white;
+      color: var(--text-primary);
       font-weight: 600;
       margin-top: 10px;
     }
 
     .error-message {
       padding: 15px;
-      background: rgba(255, 71, 87, 0.2);
-      border: 2px solid rgba(255, 71, 87, 0.5);
+      background: rgba(var(--charcoal-rgb), 0.10);
+      border: 2px solid rgba(var(--orange-rgb), 0.35);
       border-radius: 12px;
-      color: white;
+      color: var(--text-primary);
       font-weight: 600;
       margin-top: 10px;
+    }
+
+    :host-context(.dark-mode) .error-message {
+      background: rgba(var(--cream-rgb), 0.06);
     }
 
     /* Contact Methods Container */
@@ -2369,7 +2513,7 @@ import { environment } from '../../../environments/environment';
     .contact-methods-title {
       font-size: 1.5rem;
       font-weight: 700;
-      color: white;
+      color: var(--text-heading);
       margin: 0;
       text-align: center;
     }
@@ -2381,14 +2525,14 @@ import { environment } from '../../../environments/environment';
     }
 
     .contact-method-card {
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--glass-bg);
       backdrop-filter: blur(10px);
       border-radius: 16px;
       padding: 24px;
       text-decoration: none;
-      color: white;
+      color: var(--text-primary);
       transition: all 0.3s ease;
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      border: 2px solid var(--glass-border);
       display: flex;
       align-items: center;
       gap: 20px;
@@ -2396,13 +2540,13 @@ import { environment } from '../../../environments/environment';
 
     .contact-method-card:hover {
       transform: translateY(-3px);
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      border-color: rgba(var(--orange-rgb), 0.32);
+      box-shadow: 0 12px 28px rgba(var(--charcoal-rgb), 0.12);
     }
 
     .contact-method-card svg {
       flex-shrink: 0;
+      color: var(--accent);
     }
 
     .contact-method-card h3 {
@@ -2462,10 +2606,10 @@ import { environment } from '../../../environments/environment';
     }
 
     .section-subtitle {
-      color: var(--text-body);
+      color: var(--text-secondary);
       font-size: 1.1rem;
       margin-top: 10px;
-      opacity: 0.8;
+      opacity: 1;
     }
 
     .activities-scroll-container {
@@ -2475,7 +2619,7 @@ import { environment } from '../../../environments/environment';
       padding: 20px 0;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: thin;
-      scrollbar-color: rgba(102, 126, 234, 0.3) transparent;
+      scrollbar-color: rgba(var(--orange-rgb), 0.3) transparent;
       width: 100%;
     }
 
@@ -2484,17 +2628,17 @@ import { environment } from '../../../environments/environment';
     }
 
     .activities-scroll-container::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(var(--charcoal-rgb), 0.08);
       border-radius: 10px;
     }
 
     .activities-scroll-container::-webkit-scrollbar-thumb {
-      background: rgba(102, 126, 234, 0.3);
+      background: rgba(var(--orange-rgb), 0.3);
       border-radius: 10px;
     }
 
     :host-context(.dark-mode) .activities-scroll-container::-webkit-scrollbar-thumb {
-      background: rgba(167, 139, 250, 0.3);
+      background: rgba(var(--orange-rgb), 0.32);
     }
 
     .activities-grid {
@@ -2516,7 +2660,7 @@ import { environment } from '../../../environments/environment';
       max-height: 600px;
       overflow-y: auto;
       scrollbar-width: thin;
-      scrollbar-color: rgba(102, 126, 234, 0.3) transparent;
+      scrollbar-color: rgba(var(--orange-rgb), 0.3) transparent;
     }
 
     .activity-card::-webkit-scrollbar {
@@ -2524,27 +2668,27 @@ import { environment } from '../../../environments/environment';
     }
 
     .activity-card::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(var(--charcoal-rgb), 0.08);
       border-radius: 10px;
     }
 
     .activity-card::-webkit-scrollbar-thumb {
-      background: rgba(102, 126, 234, 0.3);
+      background: rgba(var(--orange-rgb), 0.3);
       border-radius: 10px;
     }
 
     :host-context(.dark-mode) .activity-card::-webkit-scrollbar-thumb {
-      background: rgba(167, 139, 250, 0.3);
+      background: rgba(var(--orange-rgb), 0.32);
     }
 
     .activity-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-lg);
-      border-color: rgba(102, 126, 234, 0.3);
+      border-color: rgba(var(--orange-rgb), 0.32);
     }
 
     :host-context(.dark-mode) .activity-card:hover {
-      border-color: rgba(167, 139, 250, 0.4);
+      border-color: rgba(var(--orange-rgb), 0.34);
     }
 
     .activity-header {
@@ -2563,12 +2707,12 @@ import { environment } from '../../../environments/environment';
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.10) 0%, rgba(var(--sand-rgb), 0.45) 100%);
       border-radius: 15px;
     }
 
     :host-context(.dark-mode) .activity-icon {
-      background: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+      background: linear-gradient(135deg, rgba(var(--orange-rgb), 0.12) 0%, rgba(var(--sand-rgb), 0.25) 100%);
     }
 
     .activity-title {
@@ -2613,7 +2757,7 @@ import { environment } from '../../../environments/environment';
     .expand-btn {
       background: none;
       border: none;
-      color: var(--text-body);
+      color: var(--text-secondary);
       cursor: pointer;
       transition: all 0.3s ease;
       padding: 5px;
@@ -2633,9 +2777,9 @@ import { environment } from '../../../environments/environment';
 
     .activity-item {
       padding: 15px;
-      background: rgba(102, 126, 234, 0.03);
+      background: rgba(var(--orange-rgb), 0.06);
       border-radius: 12px;
-      border-left: 4px solid #667eea;
+      border-left: 4px solid var(--accent);
       transition: all 0.3s ease;
       margin-bottom: 15px;
     }
@@ -2661,16 +2805,16 @@ import { environment } from '../../../environments/environment';
     }
 
     :host-context(.dark-mode) .activity-item {
-      background: rgba(167, 139, 250, 0.05);
-      border-left-color: #a78bfa;
+      background: rgba(var(--orange-rgb), 0.08);
+      border-left-color: var(--accent);
     }
 
     .activity-item:hover {
-      background: rgba(102, 126, 234, 0.08);
+      background: rgba(var(--orange-rgb), 0.10);
     }
 
     :host-context(.dark-mode) .activity-item:hover {
-      background: rgba(167, 139, 250, 0.1);
+      background: rgba(var(--orange-rgb), 0.12);
     }
 
     .activity-item h4 {
@@ -2683,12 +2827,12 @@ import { environment } from '../../../environments/environment';
     .activity-org {
       font-size: 0.95rem;
       font-weight: 600;
-      color: #667eea;
+      color: var(--accent);
       margin: 0 0 12px 0;
     }
 
     :host-context(.dark-mode) .activity-org {
-      color: #a78bfa;
+      color: var(--accent);
     }
 
     .activity-desc {
@@ -2717,11 +2861,11 @@ import { environment } from '../../../environments/environment';
     .activity-image:hover {
       transform: scale(1.05);
       box-shadow: var(--shadow-md);
-      border-color: #667eea;
+      border-color: rgba(var(--orange-rgb), 0.55);
     }
 
     :host-context(.dark-mode) .activity-image:hover {
-      border-color: #a78bfa;
+      border-color: rgba(var(--orange-rgb), 0.55);
     }
 
     .image-carousel {
@@ -2764,20 +2908,20 @@ import { environment } from '../../../environments/environment';
       cursor: pointer;
       z-index: 2;
       transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(var(--charcoal-rgb), 0.12);
     }
 
     :host-context(.dark-mode) .carousel-btn {
-      background: rgba(30, 41, 59, 0.9);
+      background: rgba(var(--charcoal-rgb), 0.85);
     }
 
     .carousel-btn:hover {
       background: white;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 12px rgba(var(--charcoal-rgb), 0.18);
     }
 
     :host-context(.dark-mode) .carousel-btn:hover {
-      background: rgba(30, 41, 59, 1);
+      background: rgba(var(--charcoal-rgb), 0.95);
     }
 
     .carousel-btn.prev {
@@ -2789,11 +2933,11 @@ import { environment } from '../../../environments/environment';
     }
 
     .carousel-btn svg {
-      color: #667eea;
+      color: var(--accent);
     }
 
     :host-context(.dark-mode) .carousel-btn svg {
-      color: #a78bfa;
+      color: var(--accent);
     }
 
     .carousel-dots {
@@ -2807,23 +2951,23 @@ import { environment } from '../../../environments/environment';
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: rgba(102, 126, 234, 0.3);
+      background: rgba(var(--orange-rgb), 0.28);
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .dot.active {
-      background: #667eea;
+      background: var(--accent);
       width: 24px;
       border-radius: 4px;
     }
 
     :host-context(.dark-mode) .dot {
-      background: rgba(167, 139, 250, 0.3);
+      background: rgba(var(--orange-rgb), 0.28);
     }
 
     :host-context(.dark-mode) .dot.active {
-      background: #a78bfa;
+      background: var(--accent);
     }
 
     /* Responsive Design */

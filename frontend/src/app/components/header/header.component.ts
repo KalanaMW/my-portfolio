@@ -11,7 +11,7 @@ import { ThemeService } from '../../services/theme.service';
     <header class="header" [class.scrolled]="isScrolled">
       <nav class="navbar">
         <div class="nav-brand">
-          <a routerLink="/" class="brand-link">
+          <a routerLink="/" class="brand-link" (click)="scrollTo('home')">
             <img src="assets/logo.png" alt="KW Logo" class="brand-logo">
             <span class="brand-name">Kalana Warnakulasooriya</span>
           </a>
@@ -61,25 +61,25 @@ import { ThemeService } from '../../services/theme.service';
       right: 0;
       z-index: 1000;
       transition: all 0.3s ease;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(var(--charcoal-rgb), 0.08);
+      box-shadow: 0 2px 20px rgba(var(--charcoal-rgb), 0.05);
     }
 
     .header.scrolled {
       background: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(50px) saturate(180%);
       -webkit-backdrop-filter: blur(50px) saturate(180%);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 30px rgba(var(--charcoal-rgb), 0.1);
     }
 
     :host-context(.dark-mode) .header {
-      background: rgba(15, 23, 42, 0.3);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(var(--charcoal-rgb), 0.7);
+      border-bottom: 1px solid rgba(var(--cream-rgb), 0.12);
     }
 
     :host-context(.dark-mode) .header.scrolled {
-      background: rgba(15, 23, 42, 0.5);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      background: rgba(var(--charcoal-rgb), 0.85);
+      box-shadow: 0 4px 30px rgba(var(--charcoal-rgb), 0.6);
     }
 
     .navbar {
@@ -98,6 +98,11 @@ import { ThemeService } from '../../services/theme.service';
       gap: 12px;
       text-decoration: none;
       transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .brand-link:focus {
+      outline: none;
     }
 
     .brand-link:hover {
@@ -108,7 +113,7 @@ import { ThemeService } from '../../services/theme.service';
       width: 50px;
       height: 50px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 12px rgba(var(--charcoal-rgb), 0.18);
       transition: transform 0.3s ease;
     }
 
@@ -119,12 +124,20 @@ import { ThemeService } from '../../services/theme.service';
     .brand-name {
       font-size: 1.3rem;
       font-weight: 700;
-      color: #1f2937;
+      color: var(--palette-orange);
       transition: color 0.3s ease;
     }
 
+    .brand-name:hover {
+      color: rgba(var(--orange-rgb), 0.85);
+    }
+
     :host-context(.dark-mode) .brand-name {
-      color: #f9fafb;
+      color: var(--palette-orange);
+    }
+
+    :host-context(.dark-mode) .brand-name:hover {
+      color: rgba(var(--orange-rgb), 0.9);
     }
 
     .nav-menu {
@@ -134,7 +147,7 @@ import { ThemeService } from '../../services/theme.service';
     }
 
     .nav-link {
-      color: #374151;
+      color: var(--text-secondary);
       text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
@@ -152,7 +165,7 @@ import { ThemeService } from '../../services/theme.service';
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--accent);
       transition: width 0.3s ease;
     }
 
@@ -161,7 +174,7 @@ import { ThemeService } from '../../services/theme.service';
     }
 
     .nav-link.active {
-      color: #667eea;
+      color: var(--accent);
     }
 
     .nav-link.active::after {
@@ -169,20 +182,20 @@ import { ThemeService } from '../../services/theme.service';
     }
 
     :host-context(.dark-mode) .nav-link {
-      color: #e5e7eb;
+      color: var(--text-secondary);
     }
 
     :host-context(.dark-mode) .nav-link:hover,
     :host-context(.dark-mode) .nav-link.active {
-      color: #a78bfa;
+      color: var(--accent);
     }
 
     :host-context(.dark-mode) .nav-link::after {
-      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+      background: var(--accent);
     }
 
     .theme-toggle {
-      background: rgba(102, 126, 234, 0.1);
+      background: rgba(var(--orange-rgb), 0.12);
       border: none;
       width: 42px;
       height: 42px;
@@ -197,7 +210,7 @@ import { ThemeService } from '../../services/theme.service';
     }
 
     .theme-toggle:hover {
-      background: rgba(102, 126, 234, 0.2);
+      background: rgba(var(--orange-rgb), 0.18);
       transform: rotate(20deg) scale(1.05);
     }
 
@@ -208,11 +221,11 @@ import { ThemeService } from '../../services/theme.service';
     }
 
     :host-context(.dark-mode) .theme-toggle {
-      background: rgba(167, 139, 250, 0.1);
+      background: rgba(var(--orange-rgb), 0.14);
     }
 
     :host-context(.dark-mode) .theme-toggle:hover {
-      background: rgba(167, 139, 250, 0.2);
+      background: rgba(var(--orange-rgb), 0.2);
     }
 
     .nav-toggle {
@@ -225,7 +238,7 @@ import { ThemeService } from '../../services/theme.service';
     .bar {
       width: 28px;
       height: 3px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--accent);
       margin: 4px 0;
       transition: 0.3s;
       border-radius: 2px;
@@ -241,18 +254,18 @@ import { ThemeService } from '../../services/theme.service';
         left: -100%;
         top: 75px;
         flex-direction: column;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(var(--white-rgb), 0.98);
         backdrop-filter: blur(10px);
         width: 100%;
         text-align: center;
         transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 40px rgba(var(--charcoal-rgb), 0.14);
         padding: 30px 0;
         gap: 25px;
       }
 
       :host-context(.dark-mode) .nav-menu {
-        background: rgba(26, 32, 44, 0.98);
+        background: rgba(var(--charcoal-rgb), 0.98);
       }
 
       .nav-menu.active {

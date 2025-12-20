@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm install && npm run build -- --configuration production --base-href /",
+  "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist/portfolio-frontend",
   "rewrites": [
     {
@@ -14,8 +14,18 @@
   ],
   "functions": {
     "api/*.js": {
-      "memory": 1024,
-      "maxDuration": 10
+      "runtime": "@vercel/node@3.2.21"
     }
-  }
+  },
+  "headers": [
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
 }

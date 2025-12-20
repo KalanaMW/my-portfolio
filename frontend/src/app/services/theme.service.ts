@@ -9,10 +9,9 @@ export class ThemeService {
   public darkMode$ = this.darkMode.asObservable();
 
   constructor() {
-    // Check for saved theme preference or default to light mode
+    // Default to dark mode unless the user explicitly chose otherwise
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+    const isDark = savedTheme ? savedTheme === 'dark' : true;
     this.setDarkMode(isDark);
   }
 

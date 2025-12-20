@@ -4,6 +4,7 @@
   "description": "Serverless API for portfolio contact form",
   "main": "index.js",
   "scripts": {
+    "start": "cd frontend && npm start",
     "dev": "vercel dev",
     "build": "echo 'No build step required'"
   },

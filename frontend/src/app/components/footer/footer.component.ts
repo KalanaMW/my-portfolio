@@ -67,7 +67,6 @@ import { CommonModule } from '@angular/common';
       <div class="footer-bottom">
         <div class="footer-bottom-content">
           <p>&copy; {{currentYear}} Kalana Warnakulasooriya. All rights reserved.</p>
-          <p class="footer-tagline">Built with <span class="heart">♥</span> using Angular</p>
         </div>
       </div>
     </footer>
@@ -75,8 +74,8 @@ import { CommonModule } from '@angular/common';
   styles: [`
     .footer {
       position: relative;
-      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-      color: #e2e8f0;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      color: var(--text-primary);
       overflow: hidden;
     }
 
@@ -88,9 +87,9 @@ import { CommonModule } from '@angular/common';
       height: 1px;
       background: linear-gradient(90deg, 
         transparent 0%,
-        #a855f7 20%,
-        #3b82f6 50%,
-        #a855f7 80%,
+        var(--accent) 25%,
+        var(--accent) 50%,
+        var(--accent) 75%,
         transparent 100%
       );
       animation: shimmer 3s ease-in-out infinite;
@@ -108,14 +107,14 @@ import { CommonModule } from '@angular/common';
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 60px 20px 30px;
+      padding: 25px 20px 15px;
     }
 
     .footer-main {
       display: grid;
       grid-template-columns: 1.5fr 1fr;
-      gap: 60px;
-      margin-bottom: 40px;
+      gap: 40px;
+      margin-bottom: 15px;
     }
 
     .footer-brand {
@@ -123,26 +122,26 @@ import { CommonModule } from '@angular/common';
     }
 
     .brand-title {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
-      background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+      background: linear-gradient(135deg, var(--text-heading) 0%, var(--accent) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .brand-tagline {
-      color: #a855f7;
-      font-size: 14px;
+      color: var(--accent);
+      font-size: 13px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
 
     .brand-description {
-      color: #94a3b8;
+      color: var(--text-secondary);
       line-height: 1.6;
       font-size: 15px;
     }
@@ -154,10 +153,10 @@ import { CommonModule } from '@angular/common';
     }
 
     .footer-section h4 {
-      color: #f1f5f9;
-      font-size: 16px;
+      color: var(--text-heading);
+      font-size: 15px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -169,11 +168,11 @@ import { CommonModule } from '@angular/common';
     }
 
     .footer-section ul li {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .footer-section ul li a {
-      color: #cbd5e1;
+      color: var(--text-secondary);
       text-decoration: none;
       transition: all 0.3s ease;
       display: inline-block;
@@ -188,12 +187,12 @@ import { CommonModule } from '@angular/common';
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #a855f7, #3b82f6);
+      background: var(--accent);
       transition: width 0.3s ease;
     }
 
     .footer-section ul li a:hover {
-      color: #fff;
+      color: var(--text-heading);
       transform: translateX(5px);
     }
 
@@ -218,8 +217,8 @@ import { CommonModule } from '@angular/common';
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(148, 163, 184, 0.1);
-      padding: 24px 0;
+      border-top: 1px solid var(--border-color);
+      padding: 12px 0;
     }
 
     .footer-bottom-content {
@@ -227,14 +226,14 @@ import { CommonModule } from '@angular/common';
       margin: 0 auto;
       padding: 0 20px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
     }
 
     .footer-bottom p {
-      color: #94a3b8;
+      color: var(--text-secondary);
       font-size: 14px;
       margin: 0;
     }
@@ -246,7 +245,7 @@ import { CommonModule } from '@angular/common';
     }
 
     .heart {
-      color: #ef4444;
+      color: var(--accent);
       animation: heartbeat 1.5s ease-in-out infinite;
     }
 
@@ -273,12 +272,12 @@ import { CommonModule } from '@angular/common';
 
     @media (max-width: 768px) {
       .footer-content {
-        padding: 40px 20px 20px;
+        padding: 20px 20px 12px;
       }
 
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
       }
 
       .footer-bottom-content {

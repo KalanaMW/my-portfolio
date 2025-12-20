@@ -81,8 +81,8 @@ import { ContactMessage } from '../../models/contact-message.model';
           <!-- Contact Info -->
           <div class="contact-info-section">
             <div class="contact-info">
-              <h3>Let's Connect</h3>
-              <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
+              <h3>Or reach out directly</h3>
+              <p>I'm always interested in new opportunities. Feel free to reach out!</p>
               
               <div class="contact-methods">
                 <a href="mailto:kalanam890@gmail.com" class="contact-method">
@@ -97,6 +97,30 @@ import { ContactMessage } from '../../models/contact-message.model';
                   </div>
                 </a>
 
+                <a href="tel:+94702018278" class="contact-method">
+                  <div class="contact-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="#34A853"/>
+                    </svg>
+                  </div>
+                  <div class="contact-details">
+                    <h4>Phone</h4>
+                    <p>+94 70 201 8278</p>
+                  </div>
+                </a>
+
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#4285F4"/>
+                    </svg>
+                  </div>
+                  <div class="contact-details">
+                    <h4>Location</h4>
+                    <p>Moratuwa, Sri Lanka</p>
+                  </div>
+                </div>
+
                 <a href="https://www.linkedin.com/in/kalana-madhumalka-19b787334" target="_blank" class="contact-method">
                   <div class="contact-icon">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
@@ -105,7 +129,7 @@ import { ContactMessage } from '../../models/contact-message.model';
                   </div>
                   <div class="contact-details">
                     <h4>LinkedIn</h4>
-                    <p>kalana-madhumalka-19b787334</p>
+						<p>Connect with me on LinkedIn</p>
                   </div>
                 </a>
 
@@ -123,7 +147,7 @@ import { ContactMessage } from '../../models/contact-message.model';
               </div>
 
               <div class="response-time">
-                <h4>Response Time</h4>
+                <h4>⏰ Response Time</h4>
                 <p>I typically respond within 24 hours</p>
               </div>
             </div>

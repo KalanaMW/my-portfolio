@@ -39,10 +39,9 @@ import { RouterLink } from '@angular/router';
                 </a>
               </div>
               <p class="hero-description">
-                I am an enthusiastic IT and Management undergraduate who thrives on tackling challenges and finding creative
-                solutions. I have a strong interest in software engineering and web development, and I am seeking a software
-                engineering internship where I can apply my time management and teamwork skills to contribute to collaborative
-                projects and create value efficiently.
+                A results-driven IT & Management undergraduate at University of Moratuwa with a strong foundation in full-stack development. 
+                Experienced in leading team projects and developing enterprise-level applications using modern technologies like Next.js, React, Angular, 
+                ASP.NET Core, and Spring Boot. Passionate about creating intuitive user experiences and scalable backend architectures that solve real-world problems.
               </p>
             </div>
           </div>
