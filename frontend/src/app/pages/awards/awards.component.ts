@@ -233,11 +233,12 @@ import { CommonModule } from '@angular/common';
     .award-card {
       background: var(--card-bg);
       border-radius: 16px;
-      padding: 2rem;
+      padding: 0;
       box-shadow: var(--shadow-sm);
       transition: all 0.3s ease;
       border: 2px solid transparent;
       text-align: center;
+      overflow: hidden;
     }
 
     .award-card:hover {
@@ -267,35 +268,36 @@ import { CommonModule } from '@angular/common';
     .award-image-wrapper {
       width: 100%;
       height: 200px;
-      margin-bottom: 1.5rem;
-      border-radius: 12px;
+      margin-bottom: 0;
+      border-radius: 0;
       overflow: hidden;
       background: transparent;
       position: relative;
+    }
+
+    .award-image-wrapper::before,
+    .award-image-wrapper::after {
+      display: none !important;
     }
 
     .award-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center 30%;
       display: block;
       transition: transform 0.3s ease;
+      filter: none !important;
+      mix-blend-mode: normal !important;
+    }
+
+    .award-image::before,
+    .award-image::after {
+      display: none !important;
     }
 
     .award-card:hover .award-image {
       transform: scale(1.05);
-    }
-
-    .award-badge {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
     }
 
     .award-title {
@@ -303,6 +305,8 @@ import { CommonModule } from '@angular/common';
       font-weight: 700;
       color: var(--text-heading);
       margin-bottom: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0 2rem;
       transition: color 0.3s ease;
     }
 
@@ -311,6 +315,7 @@ import { CommonModule } from '@angular/common';
       color: #667eea;
       font-weight: 600;
       margin-bottom: 1rem;
+      padding: 0 2rem;
     }
 
     :host-context(.dark-mode) .award-event {
@@ -320,6 +325,7 @@ import { CommonModule } from '@angular/common';
     .award-description {
       color: var(--text-secondary);
       line-height: 1.6;
+      padding: 0 2rem 2rem 2rem;
       transition: color 0.3s ease;
     }
 
