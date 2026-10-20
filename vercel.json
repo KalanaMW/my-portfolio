@@ -12,11 +12,6 @@
       "destination": "/index.html"
     }
   ],
-  "functions": {
-    "api/*.js": {
-      "runtime": "@vercel/node@3.2.21"
-    }
-  },
   "headers": [
     {
       "source": "/index.html",
