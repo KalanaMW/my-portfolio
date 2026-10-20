@@ -8,11 +8,12 @@ import { SkillService } from '../../services/skill.service';
 import { ContactService } from '../../services/contact.service';
 import { ContactMessage } from '../../models/contact-message.model';
 import { environment } from '../../../environments/environment';
+import { ProfessionalExperienceComponent } from '../../components/professional-experience/professional-experience.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule],
+  imports: [CommonModule, RouterLink, FormsModule, ProfessionalExperienceComponent],
   animations: [
     trigger('slideDown', [
       state('collapsed', style({
@@ -39,9 +40,10 @@ import { environment } from '../../../environments/environment';
           <div class="hero-text">
             <p class="hero-greeting">Hello, I'm</p>
             <h1 class="hero-title">Kalana Warnakulasooriya</h1>
-            <h2 class="hero-role">Software Engineering Intern</h2>
+            <h2 class="hero-role">Associate Software Engineer</h2>
             <p class="hero-tagline">
-              IT & Management undergraduate passionate about building scalable web applications and solving real-world problems through technology
+              Associate Software Engineer at Agrithmics / Cultive8 · IT & Management undergraduate at University of Moratuwa,
+              building enterprise applications with .NET, C#, Clean Architecture, RabbitMQ, Dapper, SQL Server and React.
             </p>
             <div class="hero-stats">
               <div class="stat-item stat-technologies glass" style="background-image: url('assets/Technologies background.png');" (click)="scrollTo('skills')">
@@ -64,6 +66,7 @@ import { environment } from '../../../environments/environment';
               <a href="#contact" class="btn btn-secondary" (click)="scrollTo('contact')">
                 <span>Get In Touch</span>
               </a>
+              <!-- Verification pending: the current CV PDF predates the Agrithmics role (metadata title "intern-SE CV"). Replace once updated. -->
               <a href="assets/cv/Kalana_Warnakulasooriya_CV.pdf" download class="btn btn-cv">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -103,9 +106,9 @@ import { environment } from '../../../environments/environment';
           <h2 class="section-title">About Me</h2>
           <div class="about-content">
             <p class="about-text">
-              A results-driven IT & Management undergraduate at University of Moratuwa with a strong foundation in full-stack development.
-              Experienced in leading team projects and developing enterprise-level applications using modern technologies like Next.js, React, Angular,
-              ASP.NET Core, and Spring Boot. Passionate about creating intuitive user experiences and scalable backend architectures.
+              I'm an Associate Software Engineer at Agrithmics (Cultive8) and an IT & Management undergraduate at University of Moratuwa.
+              My primary work centers on engineering core modules for the Lankem Enterprise Resource Planning (ERP) system using .NET, Clean Architecture, RabbitMQ, Dapper, SQL Server, and React.
+              I also handle on-site field deployments and user training across plantation estates (SLSPC), alongside contributing to fleet management (CTG), production (Ispahani), and reporting (Browns Agri) systems.
             </p>
             <div class="about-highlights">
               <div class="highlight-item">
@@ -114,7 +117,7 @@ import { environment } from '../../../environments/environment';
                 </div>
                 <div class="highlight-content">
                   <h3>Focus Areas</h3>
-                  <p>Full-Stack Development, Enterprise Solutions, UI/UX Design, Cloud Integration</p>
+                  <p>Enterprise ERP, Clean Architecture, .NET & Dapper, RabbitMQ Messaging, On-Site Field Deployment</p>
                 </div>
               </div>
               <div class="highlight-item">
@@ -146,7 +149,22 @@ import { environment } from '../../../environments/environment';
                   <span class="education-date">2023 - Present</span>
                 </div>
                 <p class="education-institution">University of Moratuwa</p>
+                <!-- Verification pending: preserve the supplied GPA until the owner confirms an update. -->
                 <p class="education-gpa"><strong>GPA: 3.46 / 4.00</strong></p>
+              </div>
+            </div>
+
+            <div class="education-item">
+              <div class="education-logo">
+                <img src="assets/imbs-logo.png" alt="IMBS Green Campus" class="edu-logo">
+              </div>
+              <div class="education-content">
+                <div class="education-header">
+                  <h3>Higher Diploma in Business Management</h3>
+                  <span class="education-date">In progress</span>
+                </div>
+                <p class="education-institution">IMBS Green Campus</p>
+                <p class="education-gpa">Recently started, complementing my technology and management studies.</p>
               </div>
             </div>
 
@@ -188,6 +206,9 @@ import { environment } from '../../../environments/environment';
         </div>
       </section>
 
+      <!-- Professional Experience -->
+      <app-professional-experience></app-professional-experience>
+
       <!-- Featured Projects -->
       <section id="projects" class="featured-projects">
         <div class="container">
@@ -196,12 +217,12 @@ import { environment } from '../../../environments/environment';
             <div class="project-card featured">
               <div class="project-image-placeholder">
                 <img src="assets/Agrilink-lanka project.png" alt="AgriLink Lanka" class="project-image">
-                <div class="project-badge">ONGOING</div>
+                <div class="project-badge">COMPLETED</div>
               </div>
               <div class="project-content">
                 <div class="project-header">
                   <h3>AgriLink Lanka</h3>
-                  <p class="project-year">2025 - Ongoing</p>
+                  <p class="project-year">Started in 2025 · Completed</p>
                 </div>
                 <p class="project-description">
                   Centralized B2B platform connecting Sri Lankan farmers with global exporters, eliminating intermediaries 
@@ -313,12 +334,12 @@ import { environment } from '../../../environments/environment';
               <div class="project-card">
                 <div class="project-image-placeholder">
                   <img src="assets/portfolio web app.png" alt="Portfolio Web App" class="project-image">
-                  <div class="project-badge">Completed</div>
+                  <div class="project-badge">MAINTAINED</div>
                 </div>
                 <div class="project-content">
                   <div class="project-header">
                     <h3>Portfolio Web App</h3>
-                    <p class="project-year">2025 - Ongoing</p>
+                    <p class="project-year">Since 2025 · Actively maintained</p>
                   </div>
                   <p class="project-description">
                     Built a full-stack personal portfolio web application with project showcase, skills section, and contact form. 
@@ -417,6 +438,12 @@ import { environment } from '../../../environments/environment';
                   <span>C++</span>
                 </div>
                 <div class="tech-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                  </svg>
+                  <span>C#</span>
+                </div>
+                <div class="tech-item">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10"/>
                   </svg>
@@ -444,14 +471,49 @@ import { environment } from '../../../environments/environment';
             </div>
 
             <div class="tech-category">
-              <h3 class="tech-category-title">Web Development</h3>
+              <h3 class="tech-category-title">Enterprise & Web Development</h3>
               <div class="tech-items">
                 <div class="tech-item">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="16 18 22 12 16 6"/>
                     <polyline points="8 6 2 12 8 18"/>
                   </svg>
-                  <span>Tailwind CSS</span>
+                  <span>.NET / ASP.NET Core</span>
+                </div>
+                <div class="tech-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                  <span>Clean Architecture</span>
+                </div>
+                <div class="tech-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                  <span>RabbitMQ</span>
+                </div>
+                <div class="tech-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                  <span>Dapper</span>
+                </div>
+                <div class="tech-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                  <span>React.js</span>
+                </div>
+                <div class="tech-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                  <span>REST APIs</span>
                 </div>
                 <div class="tech-item">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -465,13 +527,6 @@ import { environment } from '../../../environments/environment';
                     <polyline points="16 18 22 12 16 6"/>
                     <polyline points="8 6 2 12 8 18"/>
                   </svg>
-                  <span>React.js</span>
-                </div>
-                <div class="tech-item">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="16 18 22 12 16 6"/>
-                    <polyline points="8 6 2 12 8 18"/>
-                  </svg>
                   <span>Angular</span>
                 </div>
                 <div class="tech-item">
@@ -479,7 +534,7 @@ import { environment } from '../../../environments/environment';
                     <polyline points="16 18 22 12 16 6"/>
                     <polyline points="8 6 2 12 8 18"/>
                   </svg>
-                  <span>ASP.NET</span>
+                  <span>Tailwind CSS</span>
                 </div>
                 <div class="tech-item">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -514,7 +569,15 @@ import { environment } from '../../../environments/environment';
                     <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
                     <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
                   </svg>
-                  <span>MongoDB</span>
+                  <span>SQL Server</span>
+                </div>
+                <div class="tech-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                  </svg>
+                  <span>PostgreSQL</span>
                 </div>
                 <div class="tech-item">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -530,15 +593,7 @@ import { environment } from '../../../environments/environment';
                     <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
                     <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
                   </svg>
-                  <span>MSSQL</span>
-                </div>
-                <div class="tech-item">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <ellipse cx="12" cy="5" rx="9" ry="3"/>
-                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-                  </svg>
-                  <span>PostgreSQL</span>
+                  <span>MongoDB</span>
                 </div>
                 <div class="tech-item">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -564,6 +619,12 @@ import { environment } from '../../../environments/environment';
             <div class="tech-category">
               <h3 class="tech-category-title">Tools & Others</h3>
               <div class="tech-items">
+                <div class="tech-item" *ngFor="let skill of ['Database Development', 'Debugging', 'Software Testing', 'Application Deployment', 'On-Site Field Deployment & Training']">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"/>
+                  </svg>
+                  <span>{{ skill }}</span>
+                </div>
                 <div class="tech-item">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -897,7 +958,7 @@ import { environment } from '../../../environments/environment';
       <section id="contact" class="contact-section">
         <div class="container">
           <h2 class="section-title">Get In Touch</h2>
-          <p class="section-subtitle">I'm actively seeking software engineering internships and exciting collaborative projects.</p>
+          <p class="section-subtitle">Let's connect about software engineering, enterprise applications and meaningful collaborations.</p>
           
           <div class="contact-content">
             <!-- Contact Form -->
@@ -1898,6 +1959,7 @@ import { environment } from '../../../environments/environment';
       position: relative;
       z-index: 1;
       flex: 1;
+      min-width: 0;
     }
 
     .education-header {
@@ -1973,6 +2035,13 @@ import { environment } from '../../../environments/environment';
       font-weight: 600;
       margin: 0 0 8px 0;
       transition: color 0.3s ease;
+    }
+
+    @media (max-width: 600px) {
+      .education-item { flex-direction: column; padding: 24px; }
+      .education-header { flex-direction: column; gap: 12px; }
+      .education-header h3 { font-size: 1.2rem; }
+      .education-logo { width: 64px; height: 64px; }
     }
 
     /* Featured Projects */

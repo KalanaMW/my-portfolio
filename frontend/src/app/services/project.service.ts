@@ -3,19 +3,20 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Project } from '../models/project.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
-  private apiUrl = 'http://localhost:8080/api/projects';
+  private apiUrl = `${environment.apiUrl}/projects`;
 
   // Mock projects data from CV
   private mockProjects: Project[] = [
     {
       id: 1,
       title: 'AgriLink Lanka – Agricultural Export Platform',
-      description: 'Developing a centralized B2B web platform to connect Sri Lankan farmers directly with global exporters, eliminating intermediaries and promoting fair trade. Features role-based access (admin, farmer, exporter), product catalog, secure Stripe payments, automated email notifications, and glassmorphism UI.',
+      description: 'Completed a centralized B2B web platform to connect Sri Lankan farmers directly with global exporters, eliminating intermediaries and promoting fair trade. Features role-based access (admin, farmer, exporter), product catalog, secure Stripe payments, automated email notifications, and glassmorphism UI.',
       technologies: 'Next.js, Tailwind CSS, ASP.NET Core (.NET 7), PostgreSQL, Stripe, Nodemailer, TypeScript',
       startDate: '2025-01-01',
       endDate: '',

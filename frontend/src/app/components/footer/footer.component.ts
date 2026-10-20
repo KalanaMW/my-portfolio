@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
         <div class="footer-main">
           <div class="footer-brand">
             <h2 class="brand-title">Kalana Warnakulasooriya</h2>
-            <p class="brand-tagline">Software Engineering Intern</p>
+            <p class="brand-tagline">Associate Software Engineer</p>
             <p class="brand-description">
               Crafting high-performance digital experiences with precision engineering.
             </p>
@@ -24,6 +24,7 @@ import { CommonModule } from '@angular/common';
               <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#awards">Awards</a></li>

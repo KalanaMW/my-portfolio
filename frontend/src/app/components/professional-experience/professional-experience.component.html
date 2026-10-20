@@ -1,0 +1,249 @@
+<section id="experience" class="experience-section" aria-labelledby="experience-title">
+  <div class="experience-container">
+    <h2 id="experience-title" class="section-title">Professional Experience</h2>
+    <p class="section-intro">Building enterprise software. Supporting real-world operations.</p>
+
+    <article class="experience-card reveal">
+      <!-- Company header -->
+      <header class="company-header">
+        <a class="company-logo" href="https://www.agrithmics.lk/" target="_blank" rel="noopener noreferrer"
+           aria-label="Visit Agrithmics' official website (opens in a new tab)">
+          <div class="company-logo-lockup">
+            <img src="assets/professional-experience/cultive8-logo.png"
+                 alt="Cultive8 emblem" class="company-emblem" width="44" height="44">
+            <span class="logo-divider" aria-hidden="true"></span>
+            <img src="assets/professional-experience/agrithmics-logo.png"
+                 alt="Agrithmics" class="company-brandmark" width="135" height="42" loading="lazy">
+          </div>
+        </a>
+        <div class="company-heading">
+          <p class="eyebrow">Industry Experience</p>
+          <h3>Agrithmics (Pvt) Ltd <span class="brand-alias">/ Cultive8</span></h3>
+          <p>Enterprise Software Development · AgriTech Solutions</p>
+        </div>
+        <ul class="company-stats" aria-label="Experience at a glance">
+          <li><strong>Enterprise ERP</strong><span>Flagship System</span></li>
+          <li><strong>On-Site</strong><span>Field Deployment</span></li>
+          <li><strong>Colombo</strong><span>Location</span></li>
+        </ul>
+        <span class="current-badge"><span aria-hidden="true"></span>Present</span>
+      </header>
+
+      <div class="experience-layout">
+        <!-- Career progression -->
+        <div class="career-column">
+          <h4 class="subheading">Career progression</h4>
+          <ol class="role-timeline">
+            <li class="role" *ngFor="let role of roles" [class.current-role]="role.current">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div class="role-meta">
+                <p class="role-date">
+                  <time [attr.datetime]="role.startIso">{{ role.start }}</time> –
+                  <time *ngIf="role.endIso; else presentDate" [attr.datetime]="role.endIso">{{ role.end }}</time>
+                  <ng-template #presentDate>{{ role.end }}</ng-template>
+                </p>
+                <span class="role-type" [class.role-type-current]="role.current">{{ role.type }}</span>
+              </div>
+              <h5>{{ role.title }}</h5>
+              <p class="role-summary">{{ role.summary }}</p>
+            </li>
+          </ol>
+
+          <h4 class="subheading tech-heading">Core stack</h4>
+          <ul class="technology-list" aria-label="Technologies used at Agrithmics">
+            <li *ngFor="let technology of technologies">{{ technology }}</li>
+          </ul>
+
+          <h4 class="subheading responsibilities-heading">Engineering responsibilities</h4>
+          <ul class="responsibilities">
+            <li *ngFor="let item of responsibilities">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Project highlights -->
+        <div class="highlights-column">
+          <h4 class="subheading">Selected project contributions</h4>
+
+          <ng-template #highlightIcon let-icon="icon">
+            <ng-container [ngSwitch]="icon">
+              <svg *ngSwitchCase="'erp'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+              </svg>
+              <svg *ngSwitchCase="'fleet'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 6h11v10H3z"/><path d="M14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>
+              </svg>
+              <svg *ngSwitchCase="'plantation'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21v-9"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z"/><path d="M12 14c0-4 3-7 8-7 0 4-3 7-8 7z"/>
+              </svg>
+              <svg *ngSwitchCase="'reporting'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 3v18h18"/><path d="M7 16v-4"/><path d="M12 16V8"/><path d="M17 16v-7"/>
+              </svg>
+              <svg *ngSwitchCase="'production'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 21V10l5 3V10l5 3V7l8 4v10z"/><path d="M7 17h2"/><path d="M12 17h2"/><path d="M17 17h2"/>
+              </svg>
+            </ng-container>
+          </ng-template>
+
+          <!-- 1. Top Flagship: Lankem ERP -->
+          <article class="project-highlight flagship-highlight reveal">
+            <div class="highlight-top">
+              <span class="client-logo flagship-icon">
+                <ng-container *ngTemplateOutlet="highlightIcon; context: { icon: flagshipProject.icon }"></ng-container>
+              </span>
+              <div class="highlight-heading">
+                <p class="client-label">{{ flagshipProject.client }}</p>
+                <h5>{{ flagshipProject.title }}</h5>
+              </div>
+              <span class="flagship-badge">Flagship ERP Project</span>
+            </div>
+            <p class="highlight-description">{{ flagshipProject.description }}</p>
+            <ul class="highlight-tags">
+              <li *ngFor="let tag of flagshipProject.tags" class="tag-flagship">{{ tag }}</li>
+            </ul>
+          </article>
+
+          <!-- 2. Client Engagement & On-Site Deployment: SLSPC -->
+          <article class="project-highlight deployment-highlight reveal">
+            <div class="highlight-top">
+              <span class="client-logo deployment-icon">
+                <ng-container *ngTemplateOutlet="highlightIcon; context: { icon: deploymentProject.icon }"></ng-container>
+              </span>
+              <div class="highlight-heading">
+                <p class="client-label">{{ deploymentProject.client }}</p>
+                <h5>{{ deploymentProject.title }}</h5>
+              </div>
+              <span class="deployment-badge">On-Site Client Deployment</span>
+            </div>
+            <p class="highlight-description">{{ deploymentProject.description }}</p>
+            <ul class="highlight-tags">
+              <li *ngFor="let tag of deploymentProject.tags" [class.tag-emphasis]="tag === deploymentProject.emphasis">{{ tag }}</li>
+            </ul>
+          </article>
+
+          <!-- 3. Additional Client Modules & Systems -->
+          <div class="secondary-section-header">
+            <h5 class="secondary-heading-title">Additional Client Modules & Systems</h5>
+          </div>
+          <div class="project-highlights secondary-grid">
+            <article class="project-highlight secondary-card reveal" *ngFor="let project of secondaryProjects; let i = index"
+                     [style.animation-delay.ms]="(i + 1) * 80">
+              <div class="highlight-top">
+                <span class="client-logo secondary-icon">
+                  <ng-container *ngTemplateOutlet="highlightIcon; context: { icon: project.icon }"></ng-container>
+                </span>
+                <div class="highlight-heading">
+                  <p class="client-label">{{ project.client }}</p>
+                  <h5>{{ project.title }}</h5>
+                </div>
+              </div>
+              <p class="highlight-description">{{ project.description }}</p>
+              <ul class="highlight-tags">
+                <li *ngFor="let tag of project.tags">{{ tag }}</li>
+              </ul>
+            </article>
+          </div>
+
+          <p class="confidentiality-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+            </svg>
+            Client work is summarised at a high level — no confidential data, source code or client screenshots are shown.
+          </p>
+        </div>
+      </div>
+
+      <!-- Photo gallery -->
+      <div class="gallery-heading">
+        <div>
+          <h4 class="subheading">Workplace & Field Deployment</h4>
+          <p>Photos from on-site deployments and headquarters.</p>
+        </div>
+        <span class="gallery-note gallery-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/>
+          </svg>
+          Click to enlarge
+        </span>
+      </div>
+      <div class="experience-gallery">
+        <button class="photo-card reveal" type="button" *ngFor="let photo of photos; let i = index"
+                [style.animation-delay.ms]="i * 80"
+                (click)="openPhoto(i)" aria-haspopup="dialog"
+                [attr.aria-label]="'View photo: ' + photo.title">
+          <img *ngIf="photo.src" [src]="photo.src" [alt]="photo.alt"
+               [style.object-position]="photo.objectPosition || 'center center'"
+               [style.object-fit]="photo.objectFit || 'cover'"
+               loading="lazy" width="1600" height="1000" (error)="onPhotoError(photo)">
+          <span class="photo-category">{{ photo.category }}</span>
+          <span class="photo-expand" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/>
+            </svg>
+          </span>
+          <span class="photo-copy">
+            <strong>{{ photo.title }}</strong>
+            <span>{{ photo.caption }}</span>
+          </span>
+        </button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<dialog #lightbox class="experience-lightbox" aria-labelledby="lightbox-title"
+        aria-describedby="lightbox-caption" (close)="onDialogClosed()"
+        (click)="onBackdropClick($event)" (keydown)="onGalleryKeydown($event)">
+  <div class="lightbox-panel">
+    <header class="lightbox-header">
+      <div>
+        <span class="lightbox-category" *ngIf="activePhoto">{{ activePhoto.category }}</span>
+        <h2 id="lightbox-title">{{ activePhoto?.title }}</h2>
+      </div>
+      <button type="button" class="lightbox-button close-button" (click)="closePhoto()" aria-label="Close photo viewer" autofocus>✕</button>
+    </header>
+    <ng-container *ngIf="activePhoto as photo">
+      <div class="lightbox-image" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+        <img *ngIf="photo.src; else lightboxPlaceholder" [src]="photo.src" [alt]="photo.alt"
+             [style.padding]="photo.objectFit === 'contain' ? '36px' : null"
+             (error)="onPhotoError(photo)">
+        <ng-template #lightboxPlaceholder>
+          <div class="lightbox-placeholder">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <rect x="3" y="5" width="18" height="15" rx="3"/>
+              <path d="m8 5 1-2h6l1 2"/><circle cx="12" cy="12.5" r="3.5"/>
+            </svg>
+            <p>Photo coming soon</p>
+            <span>{{ photo.caption }}</span>
+          </div>
+        </ng-template>
+      </div>
+      <footer class="lightbox-footer">
+        <button type="button" class="lightbox-button" (click)="movePhoto(-1)" aria-label="Previous photo"
+                [disabled]="photos.length < 2">←</button>
+        <div aria-live="polite" aria-atomic="true">
+          <p id="lightbox-caption">{{ photo.caption }}<span *ngIf="!photo.src"> · Placeholder</span></p>
+          <span class="photo-count">{{ (activeIndex ?? 0) + 1 }} / {{ photos.length }}</span>
+        </div>
+        <button type="button" class="lightbox-button" (click)="movePhoto(1)" aria-label="Next photo"
+                [disabled]="photos.length < 2">→</button>
+      </footer>
+      <div class="lightbox-thumbs" *ngIf="photos.length > 1" role="group" aria-label="Choose photo">
+        <button type="button" class="lightbox-thumb" *ngFor="let thumb of photos; let t = index"
+                [class.active]="t === activeIndex" (click)="goToPhoto(t)"
+                [attr.aria-label]="'Show photo ' + (t + 1) + ': ' + thumb.title"
+                [attr.aria-current]="t === activeIndex ? 'true' : null">
+          <img *ngIf="thumb.src; else thumbPlaceholder" [src]="thumb.src" alt=""
+               [style.object-position]="thumb.objectPosition || 'center center'"
+               [style.object-fit]="thumb.objectFit || 'cover'"
+               loading="lazy">
+          <ng-template #thumbPlaceholder><span aria-hidden="true">{{ t + 1 }}</span></ng-template>
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</dialog>

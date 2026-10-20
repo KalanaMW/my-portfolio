@@ -16,10 +16,11 @@ import { ThemeService } from '../../services/theme.service';
             <span class="brand-name">Kalana Warnakulasooriya</span>
           </a>
         </div>
-        <div class="nav-menu" [class.active]="isMenuOpen">
+        <div id="primary-navigation" class="nav-menu" [class.active]="isMenuOpen" [attr.inert]="isCompactNavigation && !isMenuOpen ? '' : null">
           <a href="#home" class="nav-link" (click)="scrollTo('home')">Home</a>
           <a href="#about" class="nav-link" (click)="scrollTo('about')">About</a>
           <a href="#education" class="nav-link" (click)="scrollTo('education')">Education</a>
+          <a href="#experience" class="nav-link" (click)="scrollTo('experience')">Experience</a>
           <a href="#projects" class="nav-link" (click)="scrollTo('projects')">Projects</a>
           <a href="#skills" class="nav-link" (click)="scrollTo('skills')">Skills</a>
           <a href="#awards" class="nav-link" (click)="scrollTo('awards')">Awards</a>
@@ -42,11 +43,12 @@ import { ThemeService } from '../../services/theme.service';
             </svg>
           </button>
         </div>
-        <div class="nav-toggle" (click)="toggleMenu()">
+        <button type="button" class="nav-toggle" (click)="toggleMenu()" aria-controls="primary-navigation"
+                [attr.aria-expanded]="isMenuOpen" [attr.aria-label]="isMenuOpen ? 'Close navigation' : 'Open navigation'">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </div>
+        </button>
       </nav>
     </header>
   `,
@@ -142,7 +144,7 @@ import { ThemeService } from '../../services/theme.service';
 
     .nav-menu {
       display: flex;
-      gap: 35px;
+      gap: 24px;
       align-items: center;
     }
 
@@ -233,6 +235,13 @@ import { ThemeService } from '../../services/theme.service';
       flex-direction: column;
       cursor: pointer;
       padding: 5px;
+      background: transparent;
+      border: 0;
+    }
+
+    .nav-toggle:focus-visible, .nav-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
     }
 
     .bar {
@@ -244,7 +253,7 @@ import { ThemeService } from '../../services/theme.service';
       border-radius: 2px;
     }
 
-    @media (max-width: 968px) {
+    @media (max-width: 1250px) {
       .brand-name {
         display: none;
       }
@@ -262,6 +271,8 @@ import { ThemeService } from '../../services/theme.service';
         box-shadow: 0 10px 40px rgba(var(--charcoal-rgb), 0.14);
         padding: 30px 0;
         gap: 25px;
+        max-height: calc(100dvh - 75px);
+        overflow-y: auto;
       }
 
       :host-context(.dark-mode) .nav-menu {
@@ -308,6 +319,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isMenuOpen = false;
   isScrolled = false;
   isDarkMode = false;
+  isCompactNavigation = window.innerWidth <= 1250;
   private themeSubscription?: any;
 
   constructor(private themeService: ThemeService) {}
@@ -327,6 +339,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @HostListener('window:scroll')
   onWindowScroll() {
     this.isScrolled = window.pageYOffset > 50;
+  }
+
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.isCompactNavigation = window.innerWidth <= 1250;
+    if (!this.isCompactNavigation) this.closeMenu();
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    if (this.isMenuOpen) this.closeMenu();
   }
 
   toggleMenu() {

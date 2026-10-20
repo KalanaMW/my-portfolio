@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
             </div>
             <div class="hero-text">
               <h1 class="hero-title">Kalana Warnakulasooriya</h1>
-              <p class="hero-subtitle">Software Engineering Intern</p>
+              <p class="hero-subtitle">Associate Software Engineer</p>
               <div class="contact-info">
                 <a href="mailto:kalanam890@gmail.com" class="contact-item">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -39,9 +39,9 @@ import { RouterLink } from '@angular/router';
                 </a>
               </div>
               <p class="hero-description">
-                A results-driven IT & Management undergraduate at University of Moratuwa with a strong foundation in full-stack development. 
-                Experienced in leading team projects and developing enterprise-level applications using modern technologies like Next.js, React, Angular, 
-                ASP.NET Core, and Spring Boot. Passionate about creating intuitive user experiences and scalable backend architectures that solve real-world problems.
+                Associate Software Engineer at Agrithmics (Cultive8) and IT & Management undergraduate at University of Moratuwa.
+                Specialized in enterprise software engineering with .NET, Clean Architecture, RabbitMQ, Dapper, SQL Server, and React, focusing on core modules for the Lankem ERP system.
+                Experienced in on-site field deployments and user training for plantation corporations (SLSPC), as well as contributing to fleet management (CTG), production (Ispahani), and reporting (Browns Agri) systems.
               </p>
             </div>
           </div>
@@ -61,6 +61,17 @@ import { RouterLink } from '@angular/router';
                 </div>
                 <p class="timeline-institution">University of Moratuwa</p>
                 <p class="timeline-detail"><strong>Current GPA: 3.46 / 4.00</strong></p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Higher Diploma in Business Management</h3>
+                  <span class="timeline-date">In progress</span>
+                </div>
+                <p class="timeline-institution">IMBS Green Campus</p>
+                <p class="timeline-detail">Recently started.</p>
               </div>
             </div>
 
@@ -117,8 +128,10 @@ import { RouterLink } from '@angular/router';
             <div class="skill-card">
               <h3>🎯 Interests</h3>
               <div class="skill-items">
-                <span class="skill-tag">Enterprise Application Development</span>
-                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Enterprise ERP Systems</span>
+                <span class="skill-tag">Clean Architecture & .NET</span>
+                <span class="skill-tag">RabbitMQ & Distributed Messaging</span>
+                <span class="skill-tag">Field Deployments & Onboarding</span>
                 <span class="skill-tag">Competitive Gaming</span>
               </div>
             </div>
@@ -132,11 +145,11 @@ import { RouterLink } from '@angular/router';
           <div class="project-card">
             <div class="project-header">
               <h3>AgriLink Lanka – Agricultural Export Platform</h3>
-              <span class="project-badge ongoing">ONGOING</span>
+              <span class="project-badge completed">COMPLETED</span>
             </div>
-            <p class="project-year">2025 - Ongoing</p>
+            <p class="project-year">Started in 2025 · Completed</p>
             <p class="project-description">
-              Developing a centralized B2B web platform to connect Sri Lankan farmers directly with global exporters, 
+              Developed a centralized B2B web platform to connect Sri Lankan farmers directly with global exporters,
               eliminating intermediaries and promoting fair trade.
             </p>
             <p class="project-tech"><strong>Tech Stack:</strong> Next.js, Tailwind CSS, ASP.NET Core, PostgreSQL, Stripe, TypeScript</p>
@@ -203,7 +216,7 @@ import { RouterLink } from '@angular/router';
         <!-- CTA -->
         <section class="cta-section">
           <h2>Ready to Collaborate?</h2>
-          <p>I'm actively seeking software engineering internships and exciting project opportunities.</p>
+          <p>Let's connect about software engineering, enterprise applications and meaningful collaborations.</p>
           <div class="cta-buttons">
             <a routerLink="/contact" class="btn btn-primary">Get In Touch</a>
             <a routerLink="/projects" class="btn btn-secondary">View All Projects</a>

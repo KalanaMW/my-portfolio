@@ -8,6 +8,8 @@ frontend/.angular/
 # Build outputs
 frontend/dist/
 backend/target/
+backend/.local-target/
+backend/.local-data/
 
 # IDE files
 .vscode/

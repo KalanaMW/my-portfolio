@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Skill } from '../models/skill.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillService {
-  private apiUrl = 'http://localhost:8080/api/skills';
+  private apiUrl = `${environment.apiUrl}/skills`;
 
   // Mock skills data from CV
   private mockSkills: Skill[] = [
